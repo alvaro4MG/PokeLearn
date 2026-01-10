@@ -1,0 +1,26 @@
+{
+  "questions": [
+    {
+      "text": "A ______ T-shirt",
+      "image": "shirt",
+      "answers": [
+        "striped",
+        "blue",
+        "patterned",
+        "spotty"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "A _____ scarf",
+      "image": "scarf",
+      "answers": [
+        "blue",
+        "red",
+        "yellow",
+        "green"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
