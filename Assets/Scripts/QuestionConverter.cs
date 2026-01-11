@@ -1,20 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestionConverter : MonoBehaviour
+public static class QuestionConverter
 {
     [Header("Questions file")]
-    [SerializeField] private string questionsFileName = "Questions/unit_1";
+    [SerializeField] public static string questionsFileName = "Questions/unit_1";
 
     [Header("Result")]
-    public List<Question> questions = new List<Question>();
+    public static List<Question> questions = new List<Question>();
 
-    private void Awake()
-    {
-        LoadQuestions();
-    }
 
-    private void LoadQuestions()
+    public static void LoadQuestions()
     {
         TextAsset textAsset = Resources.Load<TextAsset>(questionsFileName);
 
@@ -59,5 +55,15 @@ public class QuestionConverter : MonoBehaviour
         }
 
         Debug.Log($"Preguntas cargadas: {questions.Count}");
+    }
+
+    public static List<Question> GetQuestions()
+    {
+        return questions;
+    }
+
+    public static void checkErrors()
+    {
+        //will check possible errors in questions
     }
 }

@@ -21,6 +21,19 @@ public class GameSettings : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    
+    public void ToggleMute()
+    {
+        muted = !muted;
+    }
+
+    public void SetVolume(int volume)
+    {
+        this.volume = volume;
+    }
+
+    public void SetUnit(int unit)
+    {
+        this.unit = unit;
+    }
 
 }
