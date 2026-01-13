@@ -5,9 +5,9 @@
 -patterned
 -spotty
 
-#A _____ scarf
-%scarf.png
-@blue
--red
--yellow
--green
+#She _____ a spotty skirt
+%skirt.png
+@is wearing
+-am wearing
+-wears
+-is wear

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private TMP_Text questionTextBox;
     [SerializeField] private TMP_Text correctAnswerTextBox;
     [SerializeField] private List<TMP_Text> wrongAnswerTextBox;
+    [SerializeField] private List<TMP_Text> answerTextBox;
     [SerializeField] private Image resultBox;
     [SerializeField] private Image questionImage;
         
@@ -32,7 +34,7 @@ public class QuestionManager : MonoBehaviour
     {
         //Read .txt or json
         _questionsList = LoadQuestions();
-        ShowQuestions();
+        ShowQuestion();
     }
 
     private List<Question> LoadQuestions()
@@ -49,32 +51,61 @@ public class QuestionManager : MonoBehaviour
         return QuestionConverter.questions;
     }
 
-    public void ShowQuestions()
+    public void ShowQuestion()
     {
-        questionTextBox.text = _questionsList[0].questionText;
+        Debug.Log("Show question " + id);
+        
+        // Text of the question 
+        questionTextBox.text = _questionsList[id].questionText;
+        resultBox.color = Color.gray;
 
-        correctAnswerTextBox.text = _questionsList[0].correctAnswer;
-
-
-        int i = 0;
-        foreach (var box in wrongAnswerTextBox)
-        {
-            box.text = _questionsList[0].wrongAnswers[i];
-            i++;
+        // Correct and incorrect answers (see option for 2 and 4 answers)
+        List<int> numbers = new List<int>();
+        for (int i = 0; i <= _questionsList[id].wrongAnswers.Count; i++) {  // for until <= for additional correct one
+            numbers.Add(i);
         }
 
-        questionImage.sprite = _questionsList[0].image;
+        int index = UnityEngine.Random.Range(0, numbers.Count);
+        answerTextBox[numbers[index]].text = _questionsList[id].correctAnswer;
+        correctAnswerButton = numbers[index];
+        numbers.RemoveAt(index);
+        
+        foreach (var answer in _questionsList[id].wrongAnswers)
+        {
+            index = UnityEngine.Random.Range(0, numbers.Count);
+            answerTextBox[numbers[index]].text = answer;
+            numbers.RemoveAt(index);
+        }
+        
+
+        // Image
+        if (_questionsList[id].image != null)
+        {
+            questionImage.sprite = _questionsList[id].image;
+        }
+        else
+        {
+            questionImage.sprite = null;
+        }
+        
+        // Audio
     }
 
-    public void checkAnswer(int id)
+    public void checkAnswer(int answer)
     {
-        if (id == correctAnswerButton)
+        if (answer == correctAnswerButton)
         {
             resultBox.color = Color.green;
+            id++;
+            if (id < _questionsList.Count)
+            {
+                ShowQuestion();
+            }
         }
         else
         {
             resultBox.color = Color.red;
         }
     }
+
 }
