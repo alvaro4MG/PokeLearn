@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = System.Random;
+using UnityEngine.SceneManagement;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -42,6 +42,7 @@ public class QuestionManager : MonoBehaviour
         //List<Question> list = new List<Question>();
 
         //QuestionConverter
+        
         QuestionConverter.LoadQuestions();
         
         // Check grammar on file on QuestionConverter then read here
@@ -100,6 +101,11 @@ public class QuestionManager : MonoBehaviour
             if (id < _questionsList.Count)
             {
                 ShowQuestion();
+            }
+            else
+            {
+                id = 0;
+                SceneManager.LoadScene("EndScene");
             }
         }
         else

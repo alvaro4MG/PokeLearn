@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MainMenu : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    public static MainMenu Instance;
+    public static MenuManager Instance;
     private Animator _animator;
 
     [SerializeField] private AudioSource _backgroundMusic;
@@ -77,6 +77,12 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Juego cerrado"); // visible en el editor
+    }
+
+    public void BackToMenu()
+    {
+        QuestionConverter.ClearQuestions();
+        SceneManager.LoadScene("StartMenu");
     }
 
 }

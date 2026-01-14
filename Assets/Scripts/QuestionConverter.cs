@@ -8,6 +8,7 @@ public static class QuestionConverter
 
     [Header("Result")]
     public static List<Question> questions = new List<Question>();
+    
 
 
     public static void LoadQuestions()
@@ -55,6 +56,7 @@ public static class QuestionConverter
         }
 
         Debug.Log($"Preguntas cargadas: {questions.Count}");
+        
     }
 
     public static List<Question> GetQuestions()
@@ -65,5 +67,10 @@ public static class QuestionConverter
     public static void checkErrors()
     {
         //will check possible errors in questions
+    }
+    
+    public static void ClearQuestions()
+    {
+        questions.Clear();
     }
 }
