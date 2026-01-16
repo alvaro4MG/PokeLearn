@@ -54,7 +54,7 @@ public class QuestionManager : MonoBehaviour
 
     public void ShowQuestion()
     {
-        Debug.Log("Show question " + id);
+        //Debug.Log("Show question " + id);
         
         // Text of the question 
         questionTextBox.text = _questionsList[id].questionText;

@@ -7,7 +7,7 @@ public class GameSettings : MonoBehaviour
     [Header("Settings")]
     private bool muted;
     private int volume;
-    private int unit;
+    [SerializeField] private int unit;
 
     private void Awake()
     {

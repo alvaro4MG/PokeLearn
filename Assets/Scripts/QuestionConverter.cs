@@ -7,13 +7,17 @@ public static class QuestionConverter
     [SerializeField] public static string questionsFileName = "Questions/unit_1";
 
     [Header("Result")]
+    public static List<TextAsset> units = new List<TextAsset>(Resources.LoadAll<TextAsset>("Questions"));
     public static List<Question> questions = new List<Question>();
+    
+    public static int unitId = 0;
     
 
 
     public static void LoadQuestions()
     {
-        TextAsset textAsset = Resources.Load<TextAsset>(questionsFileName);
+        //TextAsset textAsset = Resources.Load<TextAsset>(questionsFileName);
+        TextAsset textAsset = Resources.Load<TextAsset>("Questions/" + units[unitId].name);
 
         if (textAsset == null)
         {
@@ -55,7 +59,7 @@ public static class QuestionConverter
             }
         }
 
-        Debug.Log($"Preguntas cargadas: {questions.Count}");
+        //Debug.Log($"Preguntas cargadas: {questions.Count}");
         
     }
 
@@ -72,5 +76,23 @@ public static class QuestionConverter
     public static void ClearQuestions()
     {
         questions.Clear();
+    }
+
+    public static string GetUnitTitle(int i)
+    {
+        unitId += i;
+        if (unitId >= units.Count)
+        {
+            unitId = 0;
+        }else if (unitId < 0)
+        {
+            unitId = units.Count - 1;
+        }
+        return units[unitId].name;
+    }
+
+    public static int GetUnitsNumber()
+    {
+        return units.Count;
     }
 }

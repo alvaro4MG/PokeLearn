@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private AudioSource _backgroundMusic;
     [SerializeField] private AudioSource _sFXClip;
+
+    [SerializeField] private TMP_Text _unitDisplay;
+
 
     //private InputActions _controls;
     
@@ -26,6 +30,8 @@ public class MenuManager : MonoBehaviour
         //_animator = GetComponent<Animator>();
         //_backgroundMusic = GetComponent<AudioSource>();
         //_controls = new InputActions();
+        
+        
     }*/
 
     // Start is called before the first frame update
@@ -33,6 +39,10 @@ public class MenuManager : MonoBehaviour
     {
         //_animator.Play("toggle");
         //_backgroundMusic.Play();
+        if (_unitDisplay != null)
+        {
+            _unitDisplay.text = QuestionConverter.GetUnitTitle(0);
+        }
     }
 
     private void OnEnable() {
@@ -70,6 +80,7 @@ public class MenuManager : MonoBehaviour
     {
         //_animator.Play("fundido");
         //_sFXClip.Play();
+        GameSettings.Instance.SetUnit(QuestionConverter.unitId);
         SceneManager.LoadScene("CombatScene");
     }
 
@@ -84,5 +95,12 @@ public class MenuManager : MonoBehaviour
         QuestionConverter.ClearQuestions();
         SceneManager.LoadScene("StartMenu");
     }
+    
+    
+    public void NextUnit(int i)
+    {
+        _unitDisplay.text = QuestionConverter.GetUnitTitle(i);
+    }
+    
 
 }
