@@ -81,7 +81,7 @@ public class MenuManager : MonoBehaviour
         //_animator.Play("fundido");
         //_sFXClip.Play();
         GameSettings.Instance.SetUnit(QuestionConverter.unitId);
-        SceneManager.LoadScene("CombatScene");
+        SceneManager.LoadScene("InstructionScene");
     }
 
     public void QuitGame()
