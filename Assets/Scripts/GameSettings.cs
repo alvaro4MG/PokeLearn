@@ -3,10 +3,9 @@ using UnityEngine;
 public class GameSettings : MonoBehaviour
 {
     public static GameSettings Instance; //{ get; private set; }
-
-    [Header("Settings")]
-    private bool muted;
-    private int volume;
+    
+    //private bool muted;
+    //private int volume;
     [SerializeField] private int unit;
 
     private void Awake()
@@ -20,16 +19,7 @@ public class GameSettings : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
-    public void ToggleMute()
-    {
-        muted = !muted;
-    }
-
-    public void SetVolume(int volume)
-    {
-        this.volume = volume;
-    }
+    
 
     public void SetUnit(int unit)
     {

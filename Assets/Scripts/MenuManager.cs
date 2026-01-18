@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,13 +9,8 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     private Animator _animator;
 
-    [SerializeField] private AudioSource _backgroundMusic;
-    [SerializeField] private AudioSource _sFXClip;
-
     [SerializeField] private TMP_Text _unitDisplay;
-
-
-    //private InputActions _controls;
+    
     
     private void Awake()
     {
@@ -38,48 +32,16 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         //_animator.Play("toggle");
-        //_backgroundMusic.Play();
         if (_unitDisplay != null)
         {
             _unitDisplay.text = QuestionConverter.GetUnitTitle(0);
         }
     }
-
-    private void OnEnable() {
-        /*_controls.UI.Enable();
-
-        _controls.UI.AcceptUI.performed += OnAcceptUIPerformed;
-        _controls.UI.CancelUI.performed += OnCancelUIPerformed;*/
-    }
-
-    // Update is called once per frame
-    /*void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E)){
-
-            StartCoroutine(PlayGame());
-            //_animator.Play("fundido");
-
-        }else if (Input.GetKeyDown(KeyCode.Q)){
-            QuitGame();
-        }
-    }*/
-
-    /*private void OnAcceptUIPerformed(InputAction.CallbackContext ctx) {
-        StartCoroutine(PlayGame());
-        //_controls.UI.Disable();
-    }
-
-    private void OnCancelUIPerformed(InputAction.CallbackContext ctx) {
-        QuitGame();
-    }*/
-
-
+    
 
     public void PlayGame()
     {
         //_animator.Play("fundido");
-        //_sFXClip.Play();
         GameSettings.Instance.SetUnit(QuestionConverter.unitId);
         SceneManager.LoadScene("InstructionScene");
     }
