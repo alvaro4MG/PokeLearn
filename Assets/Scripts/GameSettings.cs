@@ -6,7 +6,8 @@ public class GameSettings : MonoBehaviour
     
     //private bool muted;
     //private int volume;
-    [SerializeField] private int unit;
+    [SerializeField] private int _unit;
+    [SerializeField] private int _pokemonId;
 
     private void Awake()
     {
@@ -23,7 +24,12 @@ public class GameSettings : MonoBehaviour
 
     public void SetUnit(int unit)
     {
-        this.unit = unit;
+        _unit = unit;
+    }
+    
+    public void SetPokemonId(int pokemonId)
+    {
+        _pokemonId = pokemonId;
     }
 
 }

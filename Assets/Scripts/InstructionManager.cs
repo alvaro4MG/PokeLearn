@@ -9,16 +9,16 @@ public class InstructionManager : MonoBehaviour
     public static InstructionManager Instance;
     private Animator _animator;
 
-    [SerializeField] private AudioSource _backgroundMusic;
-    [SerializeField] private AudioSource _sFXClip;
-
+    [Header("Instructions")]
     [SerializeField] private List<Sprite> _instructions;
     [SerializeField] private Image _background;
 
-    private int id;
-
-
-    //private InputActions _controls;
+    [Header("Pokemon Picker")]
+    [SerializeField] private GameObject _pokemonPicker;
+    [SerializeField] private GameObject _nextButton;
+    
+    private int idInstruction;
+    
     
     private void Awake()
     {
@@ -28,33 +28,39 @@ public class InstructionManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    /*private void Awake(){
-        //_animator = GetComponent<Animator>();
-        //_backgroundMusic = GetComponent<AudioSource>();
-        //_controls = new InputActions();
-        
-    }*/
 
     // Start is called before the first frame update
     void Start()
     {
-        id = 0;
+        idInstruction = 0;
         //_animator.Play("toggle");
-        //_backgroundMusic.Play();
-        _background.sprite = _instructions[id];
+        _background.sprite = _instructions[idInstruction];
+        _nextButton.SetActive(true);
+        _pokemonPicker.SetActive(false);
     }
     
     
     public void NextInstruction()
     {
-        id++;
-        if (id >= _instructions.Count)
+        idInstruction++;
+        if (idInstruction >= _instructions.Count)
         {
             SceneManager.LoadScene("CombatScene");
             return;
         }
-        _background.sprite = _instructions[id];
+        _background.sprite = _instructions[idInstruction];
+        if (idInstruction == _instructions.Count - 1)
+        {
+            _nextButton.SetActive(false);
+            _pokemonPicker.SetActive(true);
+        }
     }
-    
+
+    public void PickPokemon(int idPokemon)
+    {
+        GameSettings.Instance.SetPokemonId(idPokemon);
+        Debug.Log("ID del pokemon: " + idPokemon);
+        SceneManager.LoadScene("CombatScene");
+    }
 
 }
