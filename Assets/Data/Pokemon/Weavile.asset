@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a804382e239810944939170dfe8669a3, type: 3}
+  m_Name: Weavile
+  m_EditorClassIdentifier: 
+  idPokemon: 5
+  _pokemonName: Weavile
+  _type: 5
+  _hp: 20
+  _spriteFront: {fileID: -8513809663927499921, guid: 76e77d1cf8325b24c8060c544d48ff5d, type: 3}
+  _spriteBack: {fileID: 3433574973777510957, guid: 8611fceee50809c42826c2d6c7d1538f, type: 3}

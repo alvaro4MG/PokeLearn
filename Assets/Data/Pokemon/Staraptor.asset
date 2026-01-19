@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a804382e239810944939170dfe8669a3, type: 3}
+  m_Name: Staraptor
+  m_EditorClassIdentifier: 
+  idPokemon: 4
+  _pokemonName: Staraptor
+  _type: 4
+  _hp: 20
+  _spriteFront: {fileID: 4242497098215420209, guid: ea5a162a6c08b1a4ebd527ff7bbfeeb4, type: 3}
+  _spriteBack: {fileID: 6839096627159918855, guid: c5844213384ff6e4db8a0e1dfe805613, type: 3}

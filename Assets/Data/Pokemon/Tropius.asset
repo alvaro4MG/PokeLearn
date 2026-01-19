@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a804382e239810944939170dfe8669a3, type: 3}
+  m_Name: Tropius
+  m_EditorClassIdentifier: 
+  idPokemon: 1
+  _pokemonName: Tropius
+  _type: 1
+  _hp: 20
+  _spriteFront: {fileID: -3706287395891702189, guid: f6fb80cfe1e17634b80d1e5385182a9d, type: 3}
+  _spriteBack: {fileID: 1270153614334743248, guid: b53b84a8d46b2d441987c9dcb36137e7, type: 3}

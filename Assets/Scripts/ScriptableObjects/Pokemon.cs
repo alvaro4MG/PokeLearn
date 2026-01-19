@@ -16,5 +16,6 @@ public class Pokemon : ScriptableObject
     public void OnPokemonPicked()
     {
         // Hacer aqui el GameSettings en lugar de desde los botones de pokemon picker
+        
     }
 }

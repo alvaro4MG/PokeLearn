@@ -8,6 +8,7 @@ public class GameSettings : MonoBehaviour
     //private int volume;
     [SerializeField] private int _unit;
     [SerializeField] private int _pokemonId;
+    [SerializeField] private Pokemon _pokemonSelected;
 
     private void Awake()
     {
