@@ -61,6 +61,7 @@ public class MenuManager : MonoBehaviour
     
     public void NextUnit(int i)
     {
+        AudioManager.Instance.PlayNavigateUI();
         _unitDisplay.text = QuestionConverter.GetUnitTitle(i);
     }
     
