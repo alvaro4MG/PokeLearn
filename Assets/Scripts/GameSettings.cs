@@ -33,4 +33,14 @@ public class GameSettings : MonoBehaviour
         _pokemonId = pokemonId;
     }
 
+    public void SetPokemonSelected(Pokemon pokemonSelected)
+    {
+        _pokemonSelected = pokemonSelected;
+    }
+
+    public Sprite GetPokemonSprite()
+    {
+        return _pokemonSelected._spriteBack;
+    }
+
 }

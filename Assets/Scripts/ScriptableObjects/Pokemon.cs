@@ -10,8 +10,8 @@ public class Pokemon : ScriptableObject
     [SerializeField] private int _hp;
     
     [Header("Pokemon Sprites")]
-    [SerializeField] private Sprite _spriteFront;
-    [SerializeField] private Sprite _spriteBack;
+    [SerializeField] public Sprite _spriteFront;
+    [SerializeField] public Sprite _spriteBack;
 
     public void OnPokemonPicked()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class DissappearScript : MonoBehaviour
 {
     [SerializeField] GameObject _object;
     

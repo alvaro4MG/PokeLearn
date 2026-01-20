@@ -1444,6 +1444,13 @@ MonoBehaviour:
   _background: {fileID: 1299032503}
   _pokemonPicker: {fileID: 1122960238}
   _nextButton: {fileID: 116113692}
+  _pokemons:
+  - {fileID: 11400000, guid: e38a3a61dbf3cd3448057aeac1597a5f, type: 2}
+  - {fileID: 11400000, guid: 7e9303017e22a5c429548aae388e4af8, type: 2}
+  - {fileID: 11400000, guid: b15124bedd214f04d93f4c12030e9e17, type: 2}
+  - {fileID: 11400000, guid: a9ff0b02e2ee86a44804bc457aae804c, type: 2}
+  - {fileID: 11400000, guid: b2ce0787a8fbbeb40b63e42479a85230, type: 2}
+  - {fileID: 11400000, guid: 60a53111d2da72d40b2c0104d0b706f4, type: 2}
 --- !u!1 &1759449950
 GameObject:
   m_ObjectHideFlags: 0

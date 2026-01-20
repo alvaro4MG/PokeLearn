@@ -16,6 +16,7 @@ public class InstructionManager : MonoBehaviour
     [Header("Pokemon Picker")]
     [SerializeField] private GameObject _pokemonPicker;
     [SerializeField] private GameObject _nextButton;
+    [SerializeField] private List<Pokemon> _pokemons;
     
     private int idInstruction;
     
@@ -59,6 +60,7 @@ public class InstructionManager : MonoBehaviour
     public void PickPokemon(int idPokemon)
     {
         GameSettings.Instance.SetPokemonId(idPokemon);
+        GameSettings.Instance.SetPokemonSelected(_pokemons[idPokemon]);
         Debug.Log("ID del pokemon: " + idPokemon);
         SceneManager.LoadScene("CombatScene");
     }
