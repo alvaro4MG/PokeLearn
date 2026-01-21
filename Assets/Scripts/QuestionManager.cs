@@ -12,13 +12,17 @@ public class QuestionManager : MonoBehaviour
     private int id = 0;
     private int correctAnswerButton = 0;
 
-    [Header("References")] 
+    [Header("Question Info")] 
     [SerializeField] private TMP_Text questionTextBox;
-    [SerializeField] private TMP_Text correctAnswerTextBox;
-    [SerializeField] private List<TMP_Text> wrongAnswerTextBox;
-    [SerializeField] private List<TMP_Text> answerTextBox;
-    [SerializeField] private Image resultBox;
     [SerializeField] private Image questionImage;
+    [SerializeField] private TMP_Text fullQuestionTextBox;
+    [SerializeField] private Image resultBox;
+    
+    [Header("Answer TextBox")]
+    [SerializeField] private GameObject group4Answer;
+    [SerializeField] private List<TMP_Text> answerTextBox4;
+    [SerializeField] private GameObject group2Answer;
+    [SerializeField] private List<TMP_Text> answerTextBox2;
         
     
     private void Awake()
@@ -54,42 +58,64 @@ public class QuestionManager : MonoBehaviour
 
     public void ShowQuestion()
     {
-        //Debug.Log("Show question " + id);
         
-        // Text of the question 
-        questionTextBox.text = _questionsList[id].questionText;
+        // Text and/or image of the questions
         resultBox.color = Color.gray;
+        // Image
+        if (_questionsList[id].image != null)
+        {
+            fullQuestionTextBox.gameObject.SetActive(false);
+            questionTextBox.gameObject.SetActive(true);
+            questionImage.gameObject.SetActive(true);
+            questionTextBox.text = _questionsList[id].questionText;
+            questionImage.sprite = _questionsList[id].image;
+        }
+        else
+        {
+            fullQuestionTextBox.gameObject.SetActive(true);
+            questionTextBox.gameObject.SetActive(false);
+            questionImage.gameObject.SetActive(false);
+            fullQuestionTextBox.text = _questionsList[id].questionText;
+            questionImage.sprite = null;
+        }
 
         // Correct and incorrect answers (see option for 2 and 4 answers)
+        if (_questionsList[id].wrongAnswers.Count == 1)
+        {
+            group2Answer.SetActive(true);
+            group4Answer.SetActive(false);
+            ShowAnswers(answerTextBox2);
+        }
+        else
+        {
+            group4Answer.SetActive(true);
+            group2Answer.SetActive(false);
+            ShowAnswers(answerTextBox4);
+        }
+        
+
+        
+        // Audio
+    }
+
+    public void ShowAnswers(List<TMP_Text> answers)
+    {
         List<int> numbers = new List<int>();
-        for (int i = 0; i <= _questionsList[id].wrongAnswers.Count; i++) {  // for until <= for additional correct one
+        for (int i = 0; i <= _questionsList[id].wrongAnswers.Count; i++) {  // for loop until <= for additional correct one
             numbers.Add(i);
         }
 
         int index = UnityEngine.Random.Range(0, numbers.Count);
-        answerTextBox[numbers[index]].text = _questionsList[id].correctAnswer;
+        answers[numbers[index]].text = _questionsList[id].correctAnswer;
         correctAnswerButton = numbers[index];
         numbers.RemoveAt(index);
         
         foreach (var answer in _questionsList[id].wrongAnswers)
         {
             index = UnityEngine.Random.Range(0, numbers.Count);
-            answerTextBox[numbers[index]].text = answer;
+            answers[numbers[index]].text = answer;
             numbers.RemoveAt(index);
         }
-        
-
-        // Image
-        if (_questionsList[id].image != null)
-        {
-            questionImage.sprite = _questionsList[id].image;
-        }
-        else
-        {
-            questionImage.sprite = null;
-        }
-        
-        // Audio
     }
 
     public void checkAnswer(int answer)

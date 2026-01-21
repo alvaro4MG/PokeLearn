@@ -11,3 +11,14 @@
 -am wearing
 -wears
 -is wear
+
+#He is wearing a colorful hat
+%hat.png
+@False
+-True
+
+#What ____ wearing?
+@are you
+-you are
+-is you
+-you is
