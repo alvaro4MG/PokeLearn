@@ -60,8 +60,6 @@ public class QuestionManager : MonoBehaviour
     {
         
         // Text and/or image of the questions
-        resultBox.color = Color.gray;
-        // Image
         if (_questionsList[id].image != null)
         {
             fullQuestionTextBox.gameObject.SetActive(false);
@@ -78,6 +76,9 @@ public class QuestionManager : MonoBehaviour
             fullQuestionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = null;
         }
+        
+        // Result box for debugging
+        resultBox.color = Color.gray;
 
         // Correct and incorrect answers (see option for 2 and 4 answers)
         if (_questionsList[id].wrongAnswers.Count == 1)
@@ -132,6 +133,7 @@ public class QuestionManager : MonoBehaviour
             {
                 id = 0;
                 SceneManager.LoadScene("EndScene");
+                AudioManager.Instance.StopCynthiaMusic();
             }
         }
         else

@@ -7,7 +7,7 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    private Animator _animator;
+    //private Animator _animator;
 
     [SerializeField] private TMP_Text _unitDisplay;
     
@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
         {
             _unitDisplay.text = QuestionConverter.GetUnitTitle(0);
         }
+        AudioManager.Instance.PlayBackgroundMusic();
     }
     
 

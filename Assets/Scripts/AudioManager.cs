@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _backgroundMusic;
     [SerializeField] private AudioSource _acceptUI;
     [SerializeField] private AudioSource _navigateUI;
+    [SerializeField] private AudioSource _cynthiaMusic;
     
     
     
@@ -56,11 +57,27 @@ public class AudioManager : MonoBehaviour
         _navigateUI.Play();
     }
 
+    public void PlayBackgroundMusic()
+    {
+        if (!_backgroundMusic.isPlaying)
+        {
+            _backgroundMusic.Play();
+        }
+    }
+
     public void StopBackgroundMusic()
     {
         _backgroundMusic.Stop();
     }
     
-    
+    public void PlayCynthiaMusic()
+    {
+        _cynthiaMusic.Play();
+    }
+
+    public void StopCynthiaMusic()
+    {
+        _cynthiaMusic.Stop();
+    }
 
 }
