@@ -1,4 +1,4 @@
 public enum ETypes
 {
-    Fire, Plant, Earth, Water, Flying, Dark
+    Fire, Grass, Earth, Water, Flying, Dark
 }

@@ -9,6 +9,7 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private int _unit;
     [SerializeField] private int _pokemonId;
     [SerializeField] private Pokemon _pokemonSelected;
+    [SerializeField] private bool win = false;
 
     private void Awake()
     {
@@ -41,6 +42,16 @@ public class GameSettings : MonoBehaviour
     public Sprite GetPokemonSprite()
     {
         return _pokemonSelected._spriteBack;
+    }
+
+    public bool GetWin()
+    {
+        return win;
+    }
+
+    public void SetWin(bool win)
+    {
+        this.win = win;
     }
 
 }

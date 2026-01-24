@@ -4,13 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
-public class MenuManager : MonoBehaviour
+public class EndManager : MonoBehaviour
 {
-    public static MenuManager Instance;
+    public static EndManager Instance;
     //private Animator _animator;
 
-    [SerializeField] private TMP_Text _unitDisplay;
-    
     
     private void Awake()
     {
@@ -32,17 +30,18 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         //_animator.Play("toggle");
-        _unitDisplay.text = QuestionConverter.GetUnitTitle(0);
-        AudioManager.Instance.PlayBackgroundMusic();
+        AudioManager.Instance.StopBackgroundMusic();
+
+        if (GameSettings.Instance.GetWin())
+        {
+            AudioManager.Instance.PlayWinMusic();
+        }
+        else
+        {
+            AudioManager.Instance.PlayLoseMusic();
+        }
     }
     
-
-    public void PlayGame()
-    {
-        //_animator.Play("fundido");
-        GameSettings.Instance.SetUnit(QuestionConverter.unitId);
-        SceneManager.LoadScene("InstructionScene");
-    }
 
     public void QuitGame()
     {
@@ -50,13 +49,20 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Juego cerrado"); // visible en el editor
     }
 
-    
-    
-    public void NextUnit(int i)
+    public void BackToMenu()
     {
-        AudioManager.Instance.PlayNavigateUI();
-        _unitDisplay.text = QuestionConverter.GetUnitTitle(i);
+        QuestionConverter.ClearQuestions();
+        if (GameSettings.Instance.GetWin())
+        {
+            AudioManager.Instance.StopWinMusic();
+        }
+        else
+        {
+            AudioManager.Instance.StopLoseMusic();
+        }
+        SceneManager.LoadScene("StartMenu");
     }
+    
     
 
 }
