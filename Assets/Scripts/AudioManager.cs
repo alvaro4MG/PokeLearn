@@ -8,11 +8,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private int _volume;
     [SerializeField] private bool _muted;
     
-    [Header("Music/AudioSource")]
+    [Header("Background Music")]
     [SerializeField] private AudioSource _backgroundMusic;
+    [SerializeField] private AudioSource _cynthiaMusic;
+    [SerializeField] private AudioSource _winMusic;
+    [SerializeField] private AudioSource _loseMusic;
+    
+    [Header("SFX Music")]
     [SerializeField] private AudioSource _acceptUI;
     [SerializeField] private AudioSource _navigateUI;
-    [SerializeField] private AudioSource _cynthiaMusic;
     
     
     
@@ -56,6 +60,7 @@ public class AudioManager : MonoBehaviour
     {
         _navigateUI.Play();
     }
+    
 
     public void PlayBackgroundMusic()
     {
@@ -70,14 +75,37 @@ public class AudioManager : MonoBehaviour
         _backgroundMusic.Stop();
     }
     
+    
     public void PlayCynthiaMusic()
     {
         _cynthiaMusic.Play();
     }
-
+    
     public void StopCynthiaMusic()
     {
         _cynthiaMusic.Stop();
+    }
+    
+    
+    public void PlayWinMusic()
+    {
+        _winMusic.Play();
+    }
+    
+    public void StopWinMusic(){
+        _winMusic.Stop();
+    }
+
+    
+    
+    public void PlayLoseMusic()
+    {
+        _loseMusic.Play();
+    }
+
+    public void StopLoseMusic()
+    {
+        _loseMusic.Stop();
     }
 
 }

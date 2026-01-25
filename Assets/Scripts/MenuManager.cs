@@ -32,6 +32,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         //_animator.Play("toggle");
+        GameSettings.Instance.SetWin(false);
         _unitDisplay.text = QuestionConverter.GetUnitTitle(0);
         AudioManager.Instance.PlayBackgroundMusic();
     }
