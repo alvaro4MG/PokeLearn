@@ -124,6 +124,7 @@ public class QuestionManager : MonoBehaviour
         if (answer == correctAnswerButton)
         {
             resultBox.color = Color.green;
+            CombatManager.Instance.DamageEnemy(1);
             id++;
             if (id < _questionsList.Count)
             {
@@ -132,14 +133,15 @@ public class QuestionManager : MonoBehaviour
             else
             {
                 id = 0;
+                GameSettings.Instance.SetWin(true);
                 SceneManager.LoadScene("EndScene");
                 AudioManager.Instance.StopCynthiaMusic();
-                GameSettings.Instance.SetWin(true);
             }
         }
         else
         {
             resultBox.color = Color.red;
+            CombatManager.Instance.DamageAlly(1);
         }
     }
 

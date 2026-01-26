@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +9,14 @@ public class CombatManager : MonoBehaviour
     [Header("HP data")]
     [SerializeField] private int _allyHP;
     [SerializeField] private int _enemyHP;
+    [SerializeField] private const int _maxHP = 20;
     
     [Header("Sprites")]
     [SerializeField] private Image _allySprite;
+
+    [Header("References HP Bar")] 
+    [SerializeField] private TMP_Text _allyHPTextBox;
+    [SerializeField] private TMP_Text _enemyHPTextBox;
     
     private void Awake()
     {
@@ -26,7 +32,27 @@ public class CombatManager : MonoBehaviour
         AudioManager.Instance.StopBackgroundMusic();
         AudioManager.Instance.PlayCynthiaMusic();
         _allySprite.sprite = GameSettings.Instance.GetPokemonSprite();
+        _allyHP = _maxHP;
+        _enemyHP = _maxHP;
+        UpdateHP(_allyHPTextBox, _maxHP);
+        UpdateHP(_enemyHPTextBox, _maxHP);
     }
 
-    
+    public void DamageAlly(int damage)
+    {
+        _allyHP -= damage;
+        UpdateHP(_allyHPTextBox, _allyHP);
+    }
+
+    public void DamageEnemy(int damage)
+    {
+        _enemyHP  -= damage;
+        UpdateHP(_enemyHPTextBox, _enemyHP);
+    }
+
+    private void UpdateHP(TMP_Text textBox, int hp)
+    {
+        textBox.text = "HP: " + hp.ToString() + "/" + _maxHP.ToString();
+    }
+
 }
