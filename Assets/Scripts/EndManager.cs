@@ -8,6 +8,8 @@ public class EndManager : MonoBehaviour
 {
     public static EndManager Instance;
     //private Animator _animator;
+    
+    [SerializeField] private TMP_Text _winTextBox;
 
     
     private void Awake()
@@ -35,9 +37,11 @@ public class EndManager : MonoBehaviour
         if (GameSettings.Instance.GetWin())
         {
             AudioManager.Instance.PlayWinMusic();
+            _winTextBox.text = "You Win!!!";
         }
         else
         {
+            _winTextBox.text = "You Loose :( ";     // Emojis como 😔 no funcionan
             AudioManager.Instance.PlayLoseMusic();
         }
     }

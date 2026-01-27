@@ -141,7 +141,12 @@ public class QuestionManager : MonoBehaviour
         else
         {
             resultBox.color = Color.red;
-            CombatManager.Instance.DamageAlly(1);
+            if (CombatManager.Instance.DamageAlly(1))
+            {
+                GameSettings.Instance.SetWin(false);
+                SceneManager.LoadScene("EndScene");
+                AudioManager.Instance.StopCynthiaMusic();
+            }
         }
     }
 

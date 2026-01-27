@@ -9,7 +9,7 @@ public class CombatManager : MonoBehaviour
     [Header("HP data")]
     [SerializeField] private int _allyHP;
     [SerializeField] private int _enemyHP;
-    [SerializeField] private const int _maxHP = 20;
+    [SerializeField] private const int _maxHP = 10;
     
     [Header("Sprites")]
     [SerializeField] private Image _allySprite;
@@ -38,10 +38,15 @@ public class CombatManager : MonoBehaviour
         UpdateHP(_enemyHPTextBox, _maxHP);
     }
 
-    public void DamageAlly(int damage)
+    public bool DamageAlly(int damage)
     {
         _allyHP -= damage;
+        if (_allyHP <= 0)
+        {
+            return true;
+        }
         UpdateHP(_allyHPTextBox, _allyHP);
+        return false;
     }
 
     public void DamageEnemy(int damage)
