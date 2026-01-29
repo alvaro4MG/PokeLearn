@@ -9,14 +9,16 @@ public class CombatManager : MonoBehaviour
     [Header("HP data")]
     [SerializeField] private int _allyHP;
     [SerializeField] private int _enemyHP;
-    [SerializeField] private const int _maxHP = 10;
+    [SerializeField] public const int _maxHP = 10;
     
     [Header("Sprites")]
     [SerializeField] private Image _allySprite;
 
     [Header("References HP Bar")] 
     [SerializeField] private TMP_Text _allyHPTextBox;
+    [SerializeField] private HealthBarUI _allyHPBar;
     [SerializeField] private TMP_Text _enemyHPTextBox;
+    [SerializeField] private HealthBarUI _enemyHPBar;
     
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class CombatManager : MonoBehaviour
             return true;
         }
         UpdateHP(_allyHPTextBox, _allyHP);
+        _allyHPBar.SetHealth(_allyHP);
         return false;
     }
 
@@ -53,6 +56,7 @@ public class CombatManager : MonoBehaviour
     {
         _enemyHP  -= damage;
         UpdateHP(_enemyHPTextBox, _enemyHP);
+        _enemyHPBar.SetHealth(_enemyHP);
     }
 
     private void UpdateHP(TMP_Text textBox, int hp)
