@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -13,21 +14,18 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _cynthiaMusic;
     [SerializeField] private AudioSource _winMusic;
     [SerializeField] private AudioSource _loseMusic;
+    [SerializeField] private List<AudioSource> _tracks;
     
     [Header("SFX Music")]
     [SerializeField] private AudioSource _acceptUI;
     [SerializeField] private AudioSource _navigateUI;
+
+    private AudioSource _currentMusic;
     
     
     
     private void Awake()
     {
-        /*if(Instance == null)
-            Instance = this;
-        else
-            Destroy(this.gameObject);
-        */
-        
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -44,6 +42,11 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         _backgroundMusic.Play();
+        _tracks = new List<AudioSource>();
+        _tracks.Add(_backgroundMusic);
+        _tracks.Add(_cynthiaMusic);
+        _tracks.Add(_winMusic);
+        _tracks.Add(_loseMusic);
     }
     
     public void ToggleMute()
@@ -61,51 +64,81 @@ public class AudioManager : MonoBehaviour
         _navigateUI.Play();
     }
     
+    
+    public void PlayMusic(AudioSource newMusic)
+    {
+        if (_currentMusic == newMusic) return;
+
+        if (_currentMusic != null)
+            _currentMusic.Stop();
+
+        _currentMusic = newMusic;
+        _currentMusic.Play();
+    }
+    
 
     public void PlayBackgroundMusic()
     {
-        if (!_backgroundMusic.isPlaying)
+        /*if (_currentMusic == _backgroundMusic)
         {
-            _backgroundMusic.Play();
+            return;
         }
-    }
 
-    public void StopBackgroundMusic()
-    {
-        _backgroundMusic.Stop();
+        if (_currentMusic != null)
+        {
+            _currentMusic.Stop();
+        }
+        _backgroundMusic.Play();
+        _currentMusic = _backgroundMusic;*/
+        PlayMusic(_backgroundMusic);
     }
     
     
     public void PlayCynthiaMusic()
     {
-        _cynthiaMusic.Play();
+        //_cynthiaMusic.Play();
+        PlayMusic(_cynthiaMusic);
     }
     
+    public void PlayWinMusic()
+    {
+        //_winMusic.Play();
+        PlayMusic(_winMusic);
+    }
+    
+    public void PlayLoseMusic()
+    {
+        //_loseMusic.Play();
+        PlayMusic(_loseMusic);
+    }
+    
+
+    public void VolumeMusic(int value)
+    {
+        _volume += value/10;
+    }
+    
+    public void VolumeFX(int value)
+    {
+        _volume += value;
+    }
+    
+    public void StopBackgroundMusic()
+    {
+        _backgroundMusic.Stop();
+    }
+    
+    /*
     public void StopCynthiaMusic()
     {
         _cynthiaMusic.Stop();
     }
-    
-    
-    public void PlayWinMusic()
-    {
-        _winMusic.Play();
-    }
-    
     public void StopWinMusic(){
         _winMusic.Stop();
     }
-
-    
-    
-    public void PlayLoseMusic()
-    {
-        _loseMusic.Play();
-    }
-
     public void StopLoseMusic()
     {
         _loseMusic.Stop();
-    }
+    }*/
 
 }

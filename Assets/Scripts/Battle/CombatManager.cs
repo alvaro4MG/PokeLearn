@@ -31,7 +31,7 @@ public class CombatManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        AudioManager.Instance.StopBackgroundMusic();
+        //AudioManager.Instance.StopBackgroundMusic();
         AudioManager.Instance.PlayCynthiaMusic();
         _allySprite.sprite = GameSettings.Instance.GetPokemonSprite();
         _allyHP = _maxHP;

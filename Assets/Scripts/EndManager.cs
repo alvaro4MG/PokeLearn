@@ -32,7 +32,7 @@ public class EndManager : MonoBehaviour
     void Start()
     {
         //_animator.Play("toggle");
-        AudioManager.Instance.StopBackgroundMusic();
+        //AudioManager.Instance.StopBackgroundMusic();
 
         if (GameSettings.Instance.GetWin())
         {
@@ -58,11 +58,11 @@ public class EndManager : MonoBehaviour
         QuestionConverter.ClearQuestions();
         if (GameSettings.Instance.GetWin())
         {
-            AudioManager.Instance.StopWinMusic();
+            //AudioManager.Instance.StopWinMusic();
         }
         else
         {
-            AudioManager.Instance.StopLoseMusic();
+            //AudioManager.Instance.StopLoseMusic();
         }
         SceneManager.LoadScene("StartMenu");
     }

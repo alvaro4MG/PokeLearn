@@ -135,7 +135,7 @@ public class QuestionManager : MonoBehaviour
                 id = 0;
                 GameSettings.Instance.SetWin(true);
                 SceneManager.LoadScene("EndScene");
-                AudioManager.Instance.StopCynthiaMusic();
+                //AudioManager.Instance.StopCynthiaMusic();
             }
         }
         else
@@ -145,7 +145,7 @@ public class QuestionManager : MonoBehaviour
             {
                 GameSettings.Instance.SetWin(false);
                 SceneManager.LoadScene("EndScene");
-                AudioManager.Instance.StopCynthiaMusic();
+                //AudioManager.Instance.StopCynthiaMusic();
             }
         }
     }
