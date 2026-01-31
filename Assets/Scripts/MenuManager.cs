@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
     //private Animator _animator;
 
     [SerializeField] private TMP_Text _unitDisplay;
+    [SerializeField] private TMP_Text _volumeMusicDisplay;
+    [SerializeField] private TMP_Text _volumeFXDisplay;
     
     
     private void Awake()
@@ -34,6 +36,8 @@ public class MenuManager : MonoBehaviour
         //_animator.Play("toggle");
         GameSettings.Instance.SetWin(false);
         _unitDisplay.text = QuestionConverter.GetUnitTitle(0);
+        //_volumeMusicDisplay.text = AudioManager.Instance.GetVolumeMusic().ToString();
+        //_volumeFXDisplay.text = AudioManager.Instance.GetVolumeFX().ToString();
         AudioManager.Instance.PlayBackgroundMusic();
     }
     
@@ -58,6 +62,31 @@ public class MenuManager : MonoBehaviour
         AudioManager.Instance.PlayNavigateUI();
         _unitDisplay.text = QuestionConverter.GetUnitTitle(i);
     }
+
+    public void VolumeMusic(int i)
+    {
+        if((AudioManager.Instance.GetVolumeMusic() >= 10 && i > 0) || (AudioManager.Instance.GetVolumeMusic() <= 0 && i < 0) )
+        {
+            return;
+        }
+        AudioManager.Instance.PlayNavigateUI();
+        _volumeMusicDisplay.text = AudioManager.Instance.VolumeMusic(i).ToString();
+    }
     
+    public void VolumeFX(int i)
+    {
+        if((AudioManager.Instance.GetVolumeFX() >= 10 && i > 0) || (AudioManager.Instance.GetVolumeFX() <= 0 && i < 0) )
+        {
+            return;
+        }
+        AudioManager.Instance.PlayNavigateUI();
+        _volumeFXDisplay.text = AudioManager.Instance.VolumeFX(i).ToString();
+    }
+
+    public void SetVolumesTextBox(int value)
+    {
+        _volumeMusicDisplay.text = value.ToString();
+        _volumeFXDisplay.text = value.ToString();
+    }
 
 }

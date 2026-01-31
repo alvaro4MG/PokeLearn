@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 654.7079, y: -54.471664}
-  m_SizeDelta: {x: 328.2, y: 50}
+  m_AnchoredPosition: {x: 687.3268, y: -50.479004}
+  m_SizeDelta: {x: 1374.6536, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23358882
 MonoBehaviour:
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 132616159}
   - component: {fileID: 132616158}
   m_Layer: 5
-  m_Name: UnitDisplay
+  m_Name: VolumeFXDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 167298774}
   - component: {fileID: 167298773}
   m_Layer: 5
-  m_Name: UnitDisplay
+  m_Name: VolumeMusicDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1077,8 +1077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 654.7079, y: -208.84819}
-  m_SizeDelta: {x: 1266.0193, y: 140.8664}
+  m_AnchoredPosition: {x: 687.3268, y: -196.87021}
+  m_SizeDelta: {x: 1374.6536, y: 140.8664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171122063
 MonoBehaviour:
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.6
+  m_fontSize: 23
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 52.27289, y: 0, z: 61.95288, w: 9.264797}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1341,8 +1341,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2138379767}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1659432185}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: VolumeMusic
         m_Mode: 3
         m_Arguments:
@@ -2686,8 +2686,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2138379767}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1659432185}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: VolumeFX
         m_Mode: 3
         m_Arguments:
@@ -3178,8 +3178,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2138379767}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1659432185}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: VolumeMusic
         m_Mode: 3
         m_Arguments:
@@ -3264,10 +3264,10 @@ RectTransform:
   - {fileID: 1349519572}
   m_Father: {fileID: 998442995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -956.5976, y: -508.0906}
-  m_SizeDelta: {x: 1309.4158, y: 686.1179}
+  m_AnchoredPosition: {x: 3.4024048, y: 31.909363}
+  m_SizeDelta: {x: -610.5842, y: -393.88208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104996444
 MonoBehaviour:
@@ -3790,7 +3790,7 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -3868,7 +3868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 654.7079, y: -69.1118}
+  m_AnchoredPosition: {x: 687.3268, y: -65.56276}
   m_SizeDelta: {x: 1272.399, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351203729
@@ -4220,8 +4220,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2138379767}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1659432185}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: VolumeFX
         m_Mode: 3
         m_Arguments:
@@ -4545,6 +4545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitDisplay: {fileID: 1983567444}
+  _volumeMusicDisplay: {fileID: 167298773}
+  _volumeFXDisplay: {fileID: 132616158}
 --- !u!4 &1659432186
 Transform:
   m_ObjectHideFlags: 0
@@ -5689,7 +5691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 654.7079, y: -207.3354}
+  m_AnchoredPosition: {x: 687.3268, y: -196.68828}
   m_SizeDelta: {x: 1272.399, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2097397704
@@ -6094,11 +6096,11 @@ AudioSource:
   m_GameObject: {fileID: 2138379764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6633539868560838006, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7e4194a595b8ad6458a9677e51de68ef, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6191,11 +6193,11 @@ AudioSource:
   m_GameObject: {fileID: 2138379764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3828745023200333425, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 821f8083418811d4e9ab358484ca0466, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6291,17 +6293,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8f3bedcf9dd384386e430f7ff6eaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volume: 0
+  _volumeMusic: 0
+  _volumeFX: 0
   _muted: 0
+  _mixer: {fileID: 24100000, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   _backgroundMusic: {fileID: 2138379766}
   _cynthiaMusic: {fileID: 2138379770}
   _winMusic: {fileID: 2138379771}
   _loseMusic: {fileID: 2138379772}
-  _tracks:
-  - {fileID: 2138379766}
-  - {fileID: 2138379770}
-  - {fileID: 2138379771}
-  - {fileID: 2138379772}
   _acceptUI: {fileID: 2138379765}
   _navigateUI: {fileID: 2138379769}
 --- !u!4 &2138379768
@@ -6328,11 +6327,11 @@ AudioSource:
   m_GameObject: {fileID: 2138379764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6633539868560838006, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 03e80b2015c3b934c92607f87c1817c6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6425,11 +6424,11 @@ AudioSource:
   m_GameObject: {fileID: 2138379764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3828745023200333425, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 95bc310c5094a064ea98a9a238ef07bb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6522,11 +6521,11 @@ AudioSource:
   m_GameObject: {fileID: 2138379764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3828745023200333425, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 906d25ba90539d247ba81bbfe6986624, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6619,11 +6618,11 @@ AudioSource:
   m_GameObject: {fileID: 2138379764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3828745023200333425, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 75877fe92c27f964da7c368e83fda567, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

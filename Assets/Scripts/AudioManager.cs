@@ -1,20 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [Header("States")]
-    [SerializeField] private int _volume;
+    [Header("General Parameters")]
+    [SerializeField] private int _volumeMusic;
+    [SerializeField] private int _volumeFX;
     [SerializeField] private bool _muted;
+    [SerializeField] private AudioMixer _mixer;
     
     [Header("Background Music")]
     [SerializeField] private AudioSource _backgroundMusic;
     [SerializeField] private AudioSource _cynthiaMusic;
     [SerializeField] private AudioSource _winMusic;
     [SerializeField] private AudioSource _loseMusic;
-    [SerializeField] private List<AudioSource> _tracks;
     
     [Header("SFX Music")]
     [SerializeField] private AudioSource _acceptUI;
@@ -35,6 +38,9 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         
+        _volumeMusic = 5;        //Posiblemente usar PlayerPrefs
+        _volumeFX = 5;
+        MenuManager.Instance.SetVolumesTextBox(5);
     }
 
 
@@ -42,11 +48,10 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         _backgroundMusic.Play();
-        _tracks = new List<AudioSource>();
-        _tracks.Add(_backgroundMusic);
-        _tracks.Add(_cynthiaMusic);
-        _tracks.Add(_winMusic);
-        _tracks.Add(_loseMusic);
+        //_mixer.SetFloat("MusicVolume", CalculateVolume(_volumeMusic));
+        //_mixer.SetFloat("FXVolume", CalculateVolume(_volumeFX));
+        //MenuManager.Instance.VolumeMusic(0);
+        //MenuManager.Instance.VolumeFX(0);
     }
     
     public void ToggleMute()
@@ -54,14 +59,26 @@ public class AudioManager : MonoBehaviour
         _muted = !_muted;
     }
 
+    public int GetVolumeMusic()
+    {
+        return _volumeMusic;
+    }
+
+    public int GetVolumeFX()
+    {
+        return _volumeFX;
+    }
+
     public void PlayAcceptUI()
     {
-        _acceptUI.Play();
+        //_acceptUI.Play();
+        _acceptUI.PlayOneShot(_acceptUI.clip);
     }
 
     public void PlayNavigateUI()
     {
-        _navigateUI.Play();
+        //_navigateUI.Play();
+        _navigateUI.PlayOneShot(_navigateUI.clip);
     }
     
     
@@ -79,17 +96,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBackgroundMusic()
     {
-        /*if (_currentMusic == _backgroundMusic)
-        {
-            return;
-        }
-
-        if (_currentMusic != null)
-        {
-            _currentMusic.Stop();
-        }
-        _backgroundMusic.Play();
-        _currentMusic = _backgroundMusic;*/
         PlayMusic(_backgroundMusic);
     }
     
@@ -113,19 +119,30 @@ public class AudioManager : MonoBehaviour
     }
     
 
-    public void VolumeMusic(int value)
+    public int VolumeMusic(int value)
     {
-        _volume += value/10;
+        _volumeMusic += value;
+        _mixer.SetFloat("MusicVolume", CalculateVolume(_volumeMusic));
+        return _volumeMusic;
     }
     
-    public void VolumeFX(int value)
+    public int VolumeFX(int value)
     {
-        _volume += value;
+        _volumeFX += value;
+        _mixer.SetFloat("FXVolume", CalculateVolume(_volumeFX));
+        return _volumeFX;
     }
+    
     
     public void StopBackgroundMusic()
     {
         _backgroundMusic.Stop();
+    }
+
+    private float CalculateVolume(int value)
+    {
+        float v = Mathf.Clamp(value / 10f, 0.0001f, 1f);
+        return Mathf.Log10(v) * 20;
     }
     
     /*
