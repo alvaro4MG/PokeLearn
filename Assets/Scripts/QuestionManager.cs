@@ -129,6 +129,7 @@ public class QuestionManager : MonoBehaviour
             if (id < _questionsList.Count)
             {
                 ShowQuestion();
+                AudioManager.Instance.PlayHitEnemy();
             }
             else
             {
@@ -146,6 +147,10 @@ public class QuestionManager : MonoBehaviour
                 GameSettings.Instance.SetWin(false);
                 SceneManager.LoadScene("EndScene");
                 //AudioManager.Instance.StopCynthiaMusic();
+            }
+            else
+            {
+                AudioManager.Instance.PlayHitAlly();
             }
         }
     }

@@ -42,6 +42,7 @@ public class CombatManager : MonoBehaviour
 
     public bool DamageAlly(int damage)
     {
+        //AudioManager.Instance.PlayHitAlly();
         _allyHP -= damage;
         if (_allyHP <= 0)
         {
@@ -54,6 +55,7 @@ public class CombatManager : MonoBehaviour
 
     public void DamageEnemy(int damage)
     {
+        //AudioManager.Instance.PlayHitEnemy();
         _enemyHP  -= damage;
         UpdateHP(_enemyHPTextBox, _enemyHP);
         _enemyHPBar.SetHealth(_enemyHP);

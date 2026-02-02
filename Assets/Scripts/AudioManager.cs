@@ -22,6 +22,8 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Music")]
     [SerializeField] private AudioSource _acceptUI;
     [SerializeField] private AudioSource _navigateUI;
+    [SerializeField] private AudioSource _hitEnemy;
+    [SerializeField] private AudioSource _hitAlly;
 
     private AudioSource _currentMusic;
     
@@ -79,6 +81,16 @@ public class AudioManager : MonoBehaviour
     {
         //_navigateUI.Play();
         _navigateUI.PlayOneShot(_navigateUI.clip);
+    }
+
+    public void PlayHitEnemy()
+    {
+        _hitEnemy.PlayOneShot(_hitEnemy.clip);
+    }
+    
+    public void PlayHitAlly()
+    {
+        _hitAlly.PlayOneShot(_hitAlly.clip);
     }
     
     
