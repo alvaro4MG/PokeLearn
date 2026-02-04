@@ -14,10 +14,16 @@ public class HealthBarUI : MonoBehaviour
 
     private void Start()
     {
-        _maxHealth = CombatManager._maxHP;
-        SetHealth(_maxHealth);
         _height = _parent.sizeDelta.y;
         _width = _parent.sizeDelta.x;
+        //_maxHealth = CombatManager._maxHP;
+        //_maxHealth = QuestionManager.Instance.GetNumbersOfQuestions();
+    }
+
+    public void SetMaxHealth(float maxHealth)
+    {
+        _maxHealth = maxHealth;
+        SetHealth(_maxHealth);
     }
 
     public void SetHealth(float value)

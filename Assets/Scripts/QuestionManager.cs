@@ -38,7 +38,13 @@ public class QuestionManager : MonoBehaviour
     {
         //Read .txt or json
         _questionsList = LoadQuestions();
+        CombatManager.Instance.SetUpMaxHealth(_questionsList.Count);
         ShowQuestion();
+    }
+
+    public int GetNumbersOfQuestions()
+    {
+        return _questionsList.Count;
     }
 
     private List<Question> LoadQuestions()

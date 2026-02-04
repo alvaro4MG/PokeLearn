@@ -9,7 +9,7 @@ public class CombatManager : MonoBehaviour
     [Header("HP data")]
     [SerializeField] private int _allyHP;
     [SerializeField] private int _enemyHP;
-    [SerializeField] public const int _maxHP = 10;
+    [SerializeField] public int _maxHP = 10;
     
     [Header("Sprites")]
     [SerializeField] private Image _allySprite;
@@ -34,8 +34,16 @@ public class CombatManager : MonoBehaviour
         //AudioManager.Instance.StopBackgroundMusic();
         AudioManager.Instance.PlayCynthiaMusic();
         _allySprite.sprite = GameSettings.Instance.GetPokemonSprite();
+        
+    }
+
+    public void SetUpMaxHealth(int value)
+    {
+        _maxHP = value;
         _allyHP = _maxHP;
         _enemyHP = _maxHP;
+        _allyHPBar.SetMaxHealth(_maxHP);
+        _enemyHPBar.SetMaxHealth(_maxHP);
         UpdateHP(_allyHPTextBox, _maxHP);
         UpdateHP(_enemyHPTextBox, _maxHP);
     }
