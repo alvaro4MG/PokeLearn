@@ -8,8 +8,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [Header("General Parameters")]
-    [SerializeField] private int _volumeMusic;
-    [SerializeField] private int _volumeFX;
+    [SerializeField] private int _volumeMusic = 5;
+    [SerializeField] private int _volumeFX = 5;
     [SerializeField] private bool _muted;
     [SerializeField] private AudioMixer _mixer;
     
@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource _currentMusic;
     
-    
+    //private const string MUSIC_VOLUME_KEY = "MusicVolume";
     
     private void Awake()
     {
@@ -40,8 +40,9 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         
-        _volumeMusic = 5;        //Posiblemente usar PlayerPrefs
-        _volumeFX = 5;
+        //_volumeMusic = 5;        //Posiblemente usar PlayerPrefs
+        //_volumeMusic = PlayerPrefs.GetInt(MUSIC_VOLUME_KEY, 5);
+        //_volumeFX = 5;
         MenuManager.Instance.SetVolumesTextBox(5);
     }
 
@@ -49,6 +50,8 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        VolumeMusic(0);
+        VolumeFX(0);
         _backgroundMusic.Play();
         //_mixer.SetFloat("MusicVolume", CalculateVolume(_volumeMusic));
         //_mixer.SetFloat("FXVolume", CalculateVolume(_volumeFX));

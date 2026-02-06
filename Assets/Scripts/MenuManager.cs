@@ -85,6 +85,12 @@ public class MenuManager : MonoBehaviour
 
     public void SetVolumesTextBox(int value)
     {
+        if (value < 0)
+        {
+            _volumeMusicDisplay.text = AudioManager.Instance.GetVolumeMusic().ToString();
+            _volumeFXDisplay.text = AudioManager.Instance.GetVolumeFX().ToString();
+            return;
+        }
         _volumeMusicDisplay.text = value.ToString();
         _volumeFXDisplay.text = value.ToString();
     }

@@ -5951,6 +5951,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1659432185}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: SetVolumesTextBox
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2123971633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6295,8 +6307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8f3bedcf9dd384386e430f7ff6eaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeMusic: 0
-  _volumeFX: 0
+  _volumeMusic: 5
+  _volumeFX: 5
   _muted: 0
   _mixer: {fileID: 24100000, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
   _backgroundMusic: {fileID: 2138379766}
@@ -6432,7 +6444,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 95bc310c5094a064ea98a9a238ef07bb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6529,7 +6541,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 906d25ba90539d247ba81bbfe6986624, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6723,7 +6735,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 50a4a5710cbc13d4faa9360ff965b651, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6820,7 +6832,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2dc6c7d7be49a00469a71f3c720e891f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
