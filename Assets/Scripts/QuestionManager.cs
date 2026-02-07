@@ -16,7 +16,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private TMP_Text questionTextBox;
     [SerializeField] private Image questionImage;
     [SerializeField] private TMP_Text fullQuestionTextBox;
-    [SerializeField] private Image resultBox;
+    //[SerializeField] private Image resultBox;
     
     [Header("Answer TextBox")]
     [SerializeField] private GameObject group4Answer;
@@ -84,7 +84,7 @@ public class QuestionManager : MonoBehaviour
         }
         
         // Result box for debugging
-        resultBox.color = Color.gray;
+        //resultBox.color = Color.gray;
 
         // Correct and incorrect answers (see option for 2 and 4 answers)
         if (_questionsList[id].wrongAnswers.Count == 1)
@@ -129,7 +129,7 @@ public class QuestionManager : MonoBehaviour
     {
         if (answer == correctAnswerButton)
         {
-            resultBox.color = Color.green;
+            //resultBox.color = Color.green;
             CombatManager.Instance.DamageEnemy(1);
             id++;
             if (id < _questionsList.Count)
@@ -147,7 +147,7 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
-            resultBox.color = Color.red;
+            //resultBox.color = Color.red;
             if (CombatManager.Instance.DamageAlly(1))
             {
                 GameSettings.Instance.SetWin(false);
