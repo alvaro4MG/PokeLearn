@@ -16,6 +16,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private TMP_Text questionTextBox;
     [SerializeField] private Image questionImage;
     [SerializeField] private TMP_Text fullQuestionTextBox;
+    [SerializeField] private TMP_Text questionNumber;
     //[SerializeField] private Image resultBox;
     
     [Header("Answer TextBox")]
@@ -64,6 +65,8 @@ public class QuestionManager : MonoBehaviour
 
     public void ShowQuestion()
     {
+        // Update number
+        UpdateQuestionNumber(id);
         
         // Text and/or image of the questions
         if (_questionsList[id].image != null)
@@ -159,6 +162,11 @@ public class QuestionManager : MonoBehaviour
                 AudioManager.Instance.PlayHitAlly();
             }
         }
+    }
+
+    public void UpdateQuestionNumber(int number)
+    {
+        questionNumber.text = "Q: " + (number+1) + "/" + _questionsList.Count;
     }
 
 }
