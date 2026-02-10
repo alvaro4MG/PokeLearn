@@ -1,0 +1,17 @@
+#1. 1 image, 4 answers
+%shirt.png
+@correct
+-incorrect
+-incorrect
+-incorrect
+
+#2. 1 image, 2 answers
+%shirt.png
+@correct
+-incorrect
+
+#3. NO image, 4 answers
+@correct
+-incorrect
+-incorrect
+-incorrect
