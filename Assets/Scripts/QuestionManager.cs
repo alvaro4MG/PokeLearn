@@ -24,6 +24,10 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<TMP_Text> answerTextBox4;
     [SerializeField] private GameObject group2Answer;
     [SerializeField] private List<TMP_Text> answerTextBox2;
+    
+    [Header("Audio Settings TextBox")]
+    [SerializeField] private TMP_Text _volumeMusicDisplay;
+    [SerializeField] private TMP_Text _volumeFXDisplay;
         
     
     private void Awake()
@@ -41,6 +45,7 @@ public class QuestionManager : MonoBehaviour
         _questionsList = LoadQuestions();
         CombatManager.Instance.SetUpMaxHealth(_questionsList.Count);
         ShowQuestion();
+        SetVolumesTextBox(-1);
     }
 
     public int GetNumbersOfQuestions()
@@ -167,6 +172,39 @@ public class QuestionManager : MonoBehaviour
     public void UpdateQuestionNumber(int number)
     {
         questionNumber.text = "Q: " + (number+1) + "/" + _questionsList.Count;
+    }
+    
+    
+    public void VolumeMusic(int i)
+    {
+        if((AudioManager.Instance.GetVolumeMusic() >= 10 && i > 0) || (AudioManager.Instance.GetVolumeMusic() <= 0 && i < 0) )
+        {
+            return;
+        }
+        AudioManager.Instance.PlayNavigateUI();
+        _volumeMusicDisplay.text = AudioManager.Instance.VolumeMusic(i).ToString();
+    }
+    
+    public void VolumeFX(int i)
+    {
+        if((AudioManager.Instance.GetVolumeFX() >= 10 && i > 0) || (AudioManager.Instance.GetVolumeFX() <= 0 && i < 0) )
+        {
+            return;
+        }
+        AudioManager.Instance.PlayNavigateUI();
+        _volumeFXDisplay.text = AudioManager.Instance.VolumeFX(i).ToString();
+    }
+
+    public void SetVolumesTextBox(int value)
+    {
+        if (value < 0)
+        {
+            _volumeMusicDisplay.text = AudioManager.Instance.GetVolumeMusic().ToString();
+            _volumeFXDisplay.text = AudioManager.Instance.GetVolumeFX().ToString();
+            return;
+        }
+        _volumeMusicDisplay.text = value.ToString();
+        _volumeFXDisplay.text = value.ToString();
     }
 
 }
