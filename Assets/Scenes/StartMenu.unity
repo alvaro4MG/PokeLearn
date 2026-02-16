@@ -5130,7 +5130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 57}
+  m_AnchoredPosition: {x: -2.000122, y: 57}
   m_SizeDelta: {x: 0, y: 102.4883}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1852692587
@@ -5156,7 +5156,7 @@ MonoBehaviour:
   m_text: Quitting game...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d135faf69ecdad1489b9502fe1bb8e99, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3176719619755687262, guid: d135faf69ecdad1489b9502fe1bb8e99, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5180,10 +5180,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.79
+  m_fontSize: 72
   m_fontSizeBase: 58.79
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5218,10 +5218,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 33.750824, y: 0, z: 33.752197, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1852692588
@@ -5398,10 +5398,10 @@ RectTransform:
   - {fileID: 1852692586}
   m_Father: {fileID: 758806460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -956.5976, y: -508.0906}
-  m_SizeDelta: {x: 1309.4158, y: 686.1179}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3.4024048, y: 31.909393}
+  m_SizeDelta: {x: 1020, y: 284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928722840
 MonoBehaviour:
