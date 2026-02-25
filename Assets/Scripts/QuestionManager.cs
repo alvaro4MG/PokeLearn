@@ -135,37 +135,32 @@ public class QuestionManager : MonoBehaviour
 
     public void checkAnswer(int answer)
     {
+        
         if (answer == correctAnswerButton)
         {
-            //resultBox.color = Color.green;
-            CombatManager.Instance.DamageEnemy(1);
-            id++;
-            if (id < _questionsList.Count)
+            if (!CombatManager.Instance.DamageEnemy(1))
             {
-                ShowQuestion();
                 AudioManager.Instance.PlayHitEnemy();
-            }
-            else
-            {
-                id = 0;
-                GameSettings.Instance.SetWin(true);
-                SceneManager.LoadScene("EndScene");
-                //AudioManager.Instance.StopCynthiaMusic();
             }
         }
         else
         {
-            //resultBox.color = Color.red;
-            if (CombatManager.Instance.DamageAlly(1))
-            {
-                GameSettings.Instance.SetWin(false);
-                SceneManager.LoadScene("EndScene");
-                //AudioManager.Instance.StopCynthiaMusic();
-            }
-            else
+            if (!CombatManager.Instance.DamageAlly(1))
             {
                 AudioManager.Instance.PlayHitAlly();
             }
+        }
+        
+        id++;
+        if (id < _questionsList.Count)
+        {
+            ShowQuestion();
+        }
+        else
+        {
+            id = 0;
+            GameSettings.Instance.SetWin(CombatManager.Instance.IsWin());
+            SceneManager.LoadScene("EndScene");
         }
     }
 

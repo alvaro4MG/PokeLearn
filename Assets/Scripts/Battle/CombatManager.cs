@@ -61,17 +61,27 @@ public class CombatManager : MonoBehaviour
         return false;
     }
 
-    public void DamageEnemy(int damage)
+    public bool DamageEnemy(int damage)
     {
         //AudioManager.Instance.PlayHitEnemy();
         _enemyHP  -= damage;
+        if (_enemyHP <= 0)
+        {
+            return true;
+        }
         UpdateHP(_enemyHPTextBox, _enemyHP);
         _enemyHPBar.SetHealth(_enemyHP);
+        return false;
     }
 
     private void UpdateHP(TMP_Text textBox, int hp)
     {
         textBox.text = "HP: " + hp.ToString() + "/" + _maxHP.ToString();
+    }
+
+    public bool IsWin()
+    {
+        return _allyHP >= _enemyHP;
     }
 
 }
