@@ -1,5 +1,7 @@
 # PokeLearn
 
+![Screenshot PokeLearn](https://alvaro4mg.vercel.app/images/PokeLearn/pokelearn.png)
+
 This is PokeLearn, a Pokemon-themed quiz game designed to support English learning in Spanish educational centers. 
 
 
