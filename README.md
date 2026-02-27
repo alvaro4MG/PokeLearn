@@ -62,3 +62,11 @@ The format is as follows:
 -incorrect
 
 -incorrect
+
+
+---
+
+## Tech Stack
+- **Engine:** Unity  
+- **Language:** C#  
+- **Platform:** HTML ([itch.io](https://alvaro4mg.itch.io/pokelearn)) and PC (local version)
