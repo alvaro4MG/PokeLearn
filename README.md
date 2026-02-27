@@ -2,7 +2,11 @@
 
 ![Screenshot PokeLearn](https://alvaro4mg.vercel.app/images/PokeLearn/pokelearn.png)
 
-This is PokeLearn, a Pokemon-themed quiz game designed to support English learning in Spanish educational centers. 
+Hi, I'm **Álvaro**, a Game Developer from Spain. You can check out my online portfolio [here](https://alvaro4mg.vercel.app/).
+
+This is PokeLearn, a Pokemon-themed quiz game designed to support English learning in Spanish educational centers.
+
+Check out its current state on itch.io [here](https://alvaro4mg.itch.io/pokelearn).
 
 
 ## Local Version
