@@ -15,7 +15,7 @@ The local version allows you to enter your own questions manually with a simple 
 The format is as follows:
 > #Text of question
 > 
-> %image (optional)
+> %image (optional) // &audio (optional) [ONLY 1 OF THESE]
 > 
 > @correct answer
 > 
