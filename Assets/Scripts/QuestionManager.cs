@@ -15,6 +15,8 @@ public class QuestionManager : MonoBehaviour
     [Header("Question Info")] 
     [SerializeField] private TMP_Text questionTextBox;
     [SerializeField] private Image questionImage;
+    //[SerializeField] private AudioSource questionAudio;
+    [SerializeField] private GameObject audioButton;
     [SerializeField] private TMP_Text fullQuestionTextBox;
     [SerializeField] private TMP_Text questionNumber;
     //[SerializeField] private Image resultBox;
@@ -29,6 +31,10 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private TMP_Text _volumeMusicDisplay;
     [SerializeField] private TMP_Text _volumeFXDisplay;
         
+    
+    private AudioSource questionAudio;
+    
+    
     
     private void Awake()
     {
@@ -74,13 +80,15 @@ public class QuestionManager : MonoBehaviour
         UpdateQuestionNumber(id);
         
         // Text and/or image of the questions
-        if (_questionsList[id].image != null)
+        /*if (_questionsList[id].image != null)
         {
             fullQuestionTextBox.gameObject.SetActive(false);
             questionTextBox.gameObject.SetActive(true);
             questionImage.gameObject.SetActive(true);
             questionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = _questionsList[id].image;
+            //questionAudio.audio = null; 
+            questionAudio.clip = null;
         }
         else
         {
@@ -89,6 +97,40 @@ public class QuestionManager : MonoBehaviour
             questionImage.gameObject.SetActive(false);
             fullQuestionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = null;
+        }*/
+        
+        // Image or Audio of the question
+        if (_questionsList[id].image != null)
+        {
+            fullQuestionTextBox.gameObject.SetActive(false);
+            questionTextBox.gameObject.SetActive(true);
+            questionImage.gameObject.SetActive(true);
+            audioButton.SetActive(false);
+            questionTextBox.text = _questionsList[id].questionText;
+            questionImage.sprite = _questionsList[id].image;
+            //questionAudio.audio = null; 
+            questionAudio = null;
+        }
+        else if (_questionsList[id].audio != null)
+        {
+            Debug.Log("Cargando pregunta de audio");
+            fullQuestionTextBox.gameObject.SetActive(false);
+            questionTextBox.gameObject.SetActive(true);
+            questionImage.gameObject.SetActive(true);
+            audioButton.SetActive(true);
+            questionTextBox.text = _questionsList[id].questionText;
+            questionImage.sprite = null; 
+            questionAudio.clip = _questionsList[id].audio.clip;
+        }
+        else
+        {
+            fullQuestionTextBox.gameObject.SetActive(true);
+            questionTextBox.gameObject.SetActive(false);
+            questionImage.gameObject.SetActive(false);
+            audioButton.SetActive(false);
+            fullQuestionTextBox.text = _questionsList[id].questionText;
+            questionImage.sprite = null;
+            questionAudio = null;
         }
         
         // Result box for debugging
@@ -200,6 +242,11 @@ public class QuestionManager : MonoBehaviour
         }
         _volumeMusicDisplay.text = value.ToString();
         _volumeFXDisplay.text = value.ToString();
+    }
+
+    public void PlayAudio()
+    {
+        _questionsList[id].audio.Play();
     }
 
 }

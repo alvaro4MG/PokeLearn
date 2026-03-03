@@ -36,24 +36,31 @@ public static class QuestionConverter
             if (string.IsNullOrEmpty(line))
                 continue;
 
-            if (line.StartsWith("#"))
+            if (line.StartsWith("#"))       // Question text
             {
                 currentQuestion = new Question();
                 currentQuestion.questionText = line.Substring(1).Trim();
                 currentQuestion.wrongAnswers = new List<string>();
                 questions.Add(currentQuestion);
             }
-            else if (line.StartsWith("%") && currentQuestion != null)
+            else if (line.StartsWith("%") && currentQuestion != null)       // Image
             {
                 string imageName = line.Substring(1).Trim();
                 Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
                 currentQuestion.image = img;
             }
-            else if (line.StartsWith("@") && currentQuestion != null)
+            else if (line.StartsWith("&") && currentQuestion != null)       // Audio
+            {
+                string audioName = line.Substring(1).Trim();
+                AudioSource aud = Resources.Load<AudioSource>("Audios/" + audioName.Replace(".mp3", ""));   // Todo: careful with format
+                currentQuestion.audio = aud;
+                Debug.Log("Audio: " + aud.name);
+            }
+            else if (line.StartsWith("@") && currentQuestion != null)   // Correct answer
             {
                 currentQuestion.correctAnswer = line.Substring(1).Trim();
             }
-            else if (line.StartsWith("-") && currentQuestion != null)
+            else if (line.StartsWith("-") && currentQuestion != null)   // Wrong answers
             {
                 currentQuestion.wrongAnswers.Add(line.Substring(1).Trim());
             }
