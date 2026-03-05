@@ -7,7 +7,7 @@ public class Question
 {
     public string questionText;
     public Sprite image;
-    public AudioSource audio;
+    public AudioClip audio;
     public string correctAnswer;
     public List<string> wrongAnswers;
 }

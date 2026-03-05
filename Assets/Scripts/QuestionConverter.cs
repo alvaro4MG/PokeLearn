@@ -52,9 +52,9 @@ public static class QuestionConverter
             else if (line.StartsWith("&") && currentQuestion != null)       // Audio
             {
                 string audioName = line.Substring(1).Trim();
-                AudioSource aud = Resources.Load<AudioSource>("Audios/" + audioName.Replace(".mp3", ""));   // Todo: careful with format
+                AudioClip aud = Resources.Load<AudioClip>("Audios/" + audioName.Replace(".mp3", ""));   // Todo: careful with format
                 currentQuestion.audio = aud;
-                Debug.Log("Audio: " + aud.name);
+                //Debug.Log("Audio: " + aud.name);
             }
             else if (line.StartsWith("@") && currentQuestion != null)   // Correct answer
             {

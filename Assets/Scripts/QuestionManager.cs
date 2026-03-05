@@ -15,8 +15,8 @@ public class QuestionManager : MonoBehaviour
     [Header("Question Info")] 
     [SerializeField] private TMP_Text questionTextBox;
     [SerializeField] private Image questionImage;
-    //[SerializeField] private AudioSource questionAudio;
-    [SerializeField] private GameObject audioButton;
+    [SerializeField] private AudioSource questionAudio;
+    //[SerializeField] private GameObject audioButton;
     [SerializeField] private TMP_Text fullQuestionTextBox;
     [SerializeField] private TMP_Text questionNumber;
     //[SerializeField] private Image resultBox;
@@ -32,7 +32,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private TMP_Text _volumeFXDisplay;
         
     
-    private AudioSource questionAudio;
+    //private AudioSource questionAudio;
     
     
     
@@ -76,7 +76,7 @@ public class QuestionManager : MonoBehaviour
 
     public void ShowQuestion()
     {
-        // Update number
+        // Update number on UI
         UpdateQuestionNumber(id);
         
         // Text and/or image of the questions
@@ -105,32 +105,30 @@ public class QuestionManager : MonoBehaviour
             fullQuestionTextBox.gameObject.SetActive(false);
             questionTextBox.gameObject.SetActive(true);
             questionImage.gameObject.SetActive(true);
-            audioButton.SetActive(false);
+            questionAudio.gameObject.SetActive(false);
             questionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = _questionsList[id].image;
-            //questionAudio.audio = null; 
-            questionAudio = null;
+            questionAudio.clip = null;
         }
         else if (_questionsList[id].audio != null)
         {
-            Debug.Log("Cargando pregunta de audio");
             fullQuestionTextBox.gameObject.SetActive(false);
             questionTextBox.gameObject.SetActive(true);
-            questionImage.gameObject.SetActive(true);
-            audioButton.SetActive(true);
+            questionImage.gameObject.SetActive(false);
+            questionAudio.gameObject.SetActive(true);
             questionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = null; 
-            questionAudio.clip = _questionsList[id].audio.clip;
+            questionAudio.clip = _questionsList[id].audio;
         }
         else
         {
             fullQuestionTextBox.gameObject.SetActive(true);
             questionTextBox.gameObject.SetActive(false);
             questionImage.gameObject.SetActive(false);
-            audioButton.SetActive(false);
+            questionAudio.gameObject.SetActive(false);
             fullQuestionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = null;
-            questionAudio = null;
+            questionAudio.clip = null;
         }
         
         // Result box for debugging
@@ -246,7 +244,7 @@ public class QuestionManager : MonoBehaviour
 
     public void PlayAudio()
     {
-        _questionsList[id].audio.Play();
+        questionAudio.Play();
     }
 
 }
