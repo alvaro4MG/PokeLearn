@@ -150,7 +150,7 @@ public class QuestionManager : MonoBehaviour
         
 
         
-        // Audio
+        // Audio (más arriba)
     }
 
     public void ShowAnswers(List<TMP_Text> answers)
