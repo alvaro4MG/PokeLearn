@@ -30,7 +30,9 @@ public class QuestionManager : MonoBehaviour
     [Header("Audio Settings TextBox")]
     [SerializeField] private TMP_Text _volumeMusicDisplay;
     [SerializeField] private TMP_Text _volumeFXDisplay;
-        
+    
+    [Header("Play Audio Button")]
+    [SerializeField] private PlayAudioButton _playAudioButton;
     
     //private AudioSource questionAudio;
     
@@ -119,6 +121,7 @@ public class QuestionManager : MonoBehaviour
             questionTextBox.text = _questionsList[id].questionText;
             questionImage.sprite = null; 
             questionAudio.clip = _questionsList[id].audio;
+            _playAudioButton.SetAudio(questionAudio.clip);
         }
         else
         {
@@ -244,7 +247,8 @@ public class QuestionManager : MonoBehaviour
 
     public void PlayAudio()
     {
-        questionAudio.Play();
+        //questionAudio.Play();
+        _playAudioButton.PlayAudio();
     }
 
 }

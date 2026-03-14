@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayAudioButton : MonoBehaviour
 {
@@ -6,22 +8,28 @@ public class PlayAudioButton : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private Sprite _buttonOff;
     [SerializeField] private Sprite _buttonPlaying;
-    
-    private AudioSource questionAudio;  // obtain from QuestionManager
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    [SerializeField] private AudioSource questionAudio;
+    [SerializeField] private Image buttonImage;
+
+    public void SetAudio(AudioClip audioClip)
     {
-        
+        questionAudio.clip = audioClip;
     }
 
-    public void playAudio()
+    public void PlayAudio()
     {
+        StartCoroutine(PlayAudioRoutine());
+    }
+
+    private IEnumerator PlayAudioRoutine()
+    {
+        buttonImage.sprite = _buttonPlaying;
+
         questionAudio.Play();
-        
-        //wait for end
-        
-        //change sprite
+
+        yield return new WaitWhile(() => questionAudio.isPlaying);
+
+        buttonImage.sprite = _buttonOff;
     }
 }

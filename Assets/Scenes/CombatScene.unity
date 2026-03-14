@@ -1481,7 +1481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 295, y: 0.000015258789}
+  m_AnchoredPosition: {x: 295, y: 0.000030517578}
   m_SizeDelta: {x: -662.6887, y: -47.859985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421965779
@@ -2941,7 +2941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.0675049, y: -0.000015258789}
+  m_AnchoredPosition: {x: 1.0675049, y: -0.000030517578}
   m_SizeDelta: {x: -51.0002, y: -77.1589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003958043
@@ -4095,6 +4095,7 @@ MonoBehaviour:
   - {fileID: 136368650}
   _volumeMusicDisplay: {fileID: 597176330}
   _volumeFXDisplay: {fileID: 543384873}
+  _playAudioButton: {fileID: 1828953517}
 --- !u!4 &1324918353
 Transform:
   m_ObjectHideFlags: 0
@@ -5866,7 +5867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167.96695, y: -0.000015258789}
+  m_AnchoredPosition: {x: -167.96692, y: -0.000030517578}
   m_SizeDelta: {x: -389.06927, y: -77.158905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772623266
@@ -6182,7 +6183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 295, y: -0.0002593994}
+  m_AnchoredPosition: {x: 295, y: -0.0002746582}
   m_SizeDelta: {x: -662.68, y: -77.159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1828953513
@@ -6376,28 +6377,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828953511}
   m_CullTransparentMesh: 1
---- !u!95 &1828953517
-Animator:
-  serializedVersion: 7
+--- !u!114 &1828953517
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828953511}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 87b08058a2cbd9346b0cac336b8c4cae, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9664331ef3e1d340939dfb7bfdbbdf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonOff: {fileID: 8435151228427288224, guid: af3729cca4565c3449af3535fa618219, type: 3}
+  _buttonPlaying: {fileID: 539076706722608956, guid: af3729cca4565c3449af3535fa618219, type: 3}
+  questionAudio: {fileID: 1828953513}
+  buttonImage: {fileID: 1828953515}
 --- !u!1 &1888199390
 GameObject:
   m_ObjectHideFlags: 0
