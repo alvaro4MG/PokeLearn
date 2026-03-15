@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public static class QuestionConverter
@@ -11,21 +12,42 @@ public static class QuestionConverter
     public static List<Question> questions = new List<Question>();
     
     public static int unitId = 0;
-    
 
 
-    public static void LoadQuestions()
+    public static string GetQuestionFileText()
     {
-        //TextAsset textAsset = Resources.Load<TextAsset>(questionsFileName);
+    #if UNITY_WEBGL
+        // Leer desde Resources (WebGL / HTML)
         TextAsset textAsset = Resources.Load<TextAsset>("Questions/" + units[unitId].name);
 
         if (textAsset == null)
         {
             Debug.LogError("Could not find questions file");
-            return;
+            return null;
         }
 
-        string[] lines = textAsset.text.Split('\n');
+        return textAsset.text;
+
+    #else
+        // Leer desde StreamingAssets (Windows build)
+        string path = Path.Combine(Application.streamingAssetsPath, "Questions/" + units[unitId].name + ".txt");
+
+        if (!File.Exists(path))
+        {
+            Debug.LogError("Could not find questions file: " + path);
+            return null;
+        }
+
+        return File.ReadAllText(path);
+    #endif
+        
+    }
+
+    public static void LoadQuestions()
+    {
+        //string text = GetQuestionFileText();
+        
+        string[] lines = GetQuestionFileText().Split('\n');
 
         Question currentQuestion = null;
 
