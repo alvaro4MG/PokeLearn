@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public static class QuestionConverter
 {
@@ -67,16 +69,31 @@ public static class QuestionConverter
             }
             else if (line.StartsWith("%") && currentQuestion != null)       // Image
             {
-                string imageName = line.Substring(1).Trim();
+                /*string imageName = line.Substring(1).Trim();
                 Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
-                currentQuestion.image = img;
+                currentQuestion.image = img;*/
+                string imageName = line.Substring(1).Trim();
+                currentQuestion.image = LoadImage(imageName);
             }
-            else if (line.StartsWith("&") && currentQuestion != null)       // Audio
+            else if (line.StartsWith("&") && currentQuestion != null)
             {
                 string audioName = line.Substring(1).Trim();
-                AudioClip aud = Resources.Load<AudioClip>("Audios/" + audioName.Replace(".mp3", ""));   // Todo: careful with format
-                currentQuestion.audio = aud;
-                //Debug.Log("Audio: " + aud.name);
+                Question q = currentQuestion;
+
+                Debug.Log("Attempting to load audio: " + audioName);
+
+                LoadAudio(audioName, clip =>
+                {
+                    if (clip == null)
+                    {
+                        Debug.LogError("Audio load FAILED: " + audioName);
+                    }
+                    else
+                    {
+                        Debug.Log("Audio loaded successfully: " + audioName);
+                        q.audio = clip;
+                    }
+                });
             }
             else if (line.StartsWith("@") && currentQuestion != null)   // Correct answer
             {
@@ -124,4 +141,44 @@ public static class QuestionConverter
     {
         return units.Count;
     }
+
+    private static Sprite LoadImage(string imageName)
+    {
+    #if UNITY_WEBGL
+        Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
+        return img;
+    #else
+        string path = Path.Combine(Application.streamingAssetsPath, "Images/" + imageName);
+
+        if (!File.Exists(path))
+        {
+            Debug.LogError("Image not found: " + path);
+            return null;
+        }
+
+        byte[] fileData = File.ReadAllBytes(path);
+
+        Texture2D tex = new Texture2D(2, 2);
+        tex.LoadImage(fileData);
+
+        Sprite img = Sprite.Create(
+            tex,
+            new Rect(0, 0, tex.width, tex.height),
+            new Vector2(0.5f, 0.5f)
+        );
+        
+        return img;
+    #endif
+    }
+    
+    public static void LoadAudio(string audioName, System.Action<AudioClip> onLoaded)
+    {
+    #if UNITY_WEBGL
+        AudioClip clip = Resources.Load<AudioClip>("Audios/" + audioName.Replace(".mp3", ""));
+        onLoaded?.Invoke(clip);
+    #else
+        QuestionManager.Instance.ConvertAudioClip(audioName, onLoaded);
+    #endif
+    }
+    
 }

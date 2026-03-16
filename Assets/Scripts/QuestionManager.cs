@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -249,6 +252,30 @@ public class QuestionManager : MonoBehaviour
     {
         //questionAudio.Play();
         _playAudioButton.PlayAudio();
+    }
+
+    public void ConvertAudioClip(string audioName, System.Action<AudioClip> onLoaded)
+    {
+        StartCoroutine(LoadAudioCoroutine(audioName, onLoaded));
+    }
+
+    private IEnumerator LoadAudioCoroutine(string audioName, System.Action<AudioClip> onLoaded)
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, "Audios/" + audioName);
+
+        UnityWebRequest req = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG);
+
+        yield return req.SendWebRequest();
+
+        if (req.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Audio load error: " + req.error);
+            onLoaded?.Invoke(null);
+            yield break;
+        }
+
+        AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
+        onLoaded?.Invoke(clip);
     }
 
 }
