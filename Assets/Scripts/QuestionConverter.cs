@@ -8,13 +8,40 @@ public static class QuestionConverter
 {
     [Header("Questions file")]
     [SerializeField] public static string questionsFileName = "Questions/unit_1";
-
-    [Header("Result")]
-    public static List<TextAsset> units = new List<TextAsset>(Resources.LoadAll<TextAsset>("Questions"));
-    public static List<Question> questions = new List<Question>();
     
     public static int unitId = 0;
 
+    [Header("Result")] 
+    public static List<MyTextAsset> units = GetUnits();
+    public static List<Question> questions = new List<Question>();
+    
+
+    public static List<MyTextAsset> GetUnits()
+    {
+        List<MyTextAsset> newList = new List<MyTextAsset>();
+    #if UNITY_WEBGL
+        units = new List<MyTextAsset>();
+        var unitResources = Resources.LoadAll<TextAsset>("Questions");
+        foreach (var unit in unitResources){
+            newList.Add(new MyTextAsset(unit));
+        }
+    #else
+        string folder = Path.Combine(Application.streamingAssetsPath, "Questions");
+
+        string[] files = Directory.GetFiles(folder, "*.txt");
+
+        foreach (var file in files)
+        {
+            string content = File.ReadAllText(file);
+            string fileName = Path.GetFileNameWithoutExtension(file);
+            MyTextAsset newUnit = new MyTextAsset(fileName, content);
+            //units.Add(content);
+            newList.Add(newUnit);
+        }
+    #endif
+        return newList;
+        
+    }
 
     public static string GetQuestionFileText()
     {
@@ -181,4 +208,23 @@ public static class QuestionConverter
     #endif
     }
     
+}
+
+
+public class MyTextAsset
+{
+    public string name;
+    public string text;
+
+    public MyTextAsset(string name, string text)
+    {
+        this.name = name;
+        this.text = text;
+    }
+    
+    public MyTextAsset(TextAsset textAsset)
+    {
+        name = textAsset.name;
+        text = textAsset.text;
+    }
 }

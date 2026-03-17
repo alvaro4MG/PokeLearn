@@ -37,6 +37,9 @@ public class QuestionManager : MonoBehaviour
     [Header("Play Audio Button")]
     [SerializeField] private PlayAudioButton _playAudioButton;
     
+    [Header("Loading screen")]
+    [SerializeField] private float _loadingTime = 0.5f;
+    
     //private AudioSource questionAudio;
     
     
@@ -55,8 +58,20 @@ public class QuestionManager : MonoBehaviour
         //Read .txt or json
         _questionsList = LoadQuestions();
         CombatManager.Instance.SetUpMaxHealth(_questionsList.Count);
-        ShowQuestion();
+        StartCoroutine(WaitForLoadedQuestions());
+        
+        Debug.Log("sigue");
+        //ShowQuestion();
         SetVolumesTextBox(-1);
+    }
+
+    private IEnumerator WaitForLoadedQuestions()
+    {
+        Debug.Log("Empieza cuenta");
+        yield return new WaitForSeconds(_loadingTime);
+        Debug.Log("TERMINA cuenta");
+        ShowQuestion();
+        Debug.Log("Enseñando preguntas");
     }
 
     public int GetNumbersOfQuestions()
