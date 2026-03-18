@@ -19,6 +19,7 @@ public static class QuestionConverter
     public static List<MyTextAsset> GetUnits()
     {
         List<MyTextAsset> newList = new List<MyTextAsset>();
+        
     #if UNITY_WEBGL
         units = new List<MyTextAsset>();
         var unitResources = Resources.LoadAll<TextAsset>("Questions");
@@ -172,7 +173,8 @@ public static class QuestionConverter
     private static Sprite LoadImage(string imageName)
     {
     #if UNITY_WEBGL
-        Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
+        //Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
+        Sprite img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
         return img;
     #else
         string path = Path.Combine(Application.streamingAssetsPath, "Images/" + imageName);
