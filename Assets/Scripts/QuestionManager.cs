@@ -60,18 +60,18 @@ public class QuestionManager : MonoBehaviour
         CombatManager.Instance.SetUpMaxHealth(_questionsList.Count);
         StartCoroutine(WaitForLoadedQuestions());
         
-        Debug.Log("sigue");
+        //Debug.Log("sigue");
         //ShowQuestion();
         SetVolumesTextBox(-1);
     }
 
     private IEnumerator WaitForLoadedQuestions()
     {
-        Debug.Log("Empieza cuenta");
+        //Debug.Log("Empieza cuenta");
         yield return new WaitForSeconds(_loadingTime);
-        Debug.Log("TERMINA cuenta");
+        //Debug.Log("TERMINA cuenta");
         ShowQuestion();
-        Debug.Log("Enseñando preguntas");
+        //Debug.Log("Enseñando preguntas");
     }
 
     public int GetNumbersOfQuestions()

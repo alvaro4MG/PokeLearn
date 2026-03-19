@@ -108,17 +108,17 @@ public static class QuestionConverter
                 string audioName = line.Substring(1).Trim();
                 Question q = currentQuestion;
 
-                Debug.Log("Attempting to load audio: " + audioName);
+                //("Attempting to load audio: " + audioName);
 
                 LoadAudio(audioName, clip =>
                 {
                     if (clip == null)
                     {
-                        Debug.LogError("Audio load FAILED: " + audioName);
+                        //Debug.LogError("Audio load FAILED: " + audioName);
                     }
                     else
                     {
-                        Debug.Log("Audio loaded successfully: " + audioName);
+                        //Debug.Log("Audio loaded successfully: " + audioName);
                         q.audio = clip;
                     }
                 });
@@ -174,7 +174,11 @@ public static class QuestionConverter
     {
     #if UNITY_WEBGL
         //Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
-        Sprite img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
+        string path = "Images/" + units[unitId].name + "/" + imageName.Replace(".png", "");
+        Debug.Log("Loading sprite from: " + path);
+        
+        //Sprite img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
+        Sprite img = Resources.Load<Sprite>(path);
         return img;
     #else
         string path = Path.Combine(Application.streamingAssetsPath, "Images/" + imageName);
