@@ -274,9 +274,9 @@ public class QuestionManager : MonoBehaviour
         StartCoroutine(LoadAudioCoroutine(audioName, onLoaded));
     }
 
-    private IEnumerator LoadAudioCoroutine(string audioName, System.Action<AudioClip> onLoaded)
+    private IEnumerator LoadAudioCoroutine(string audioPath, System.Action<AudioClip> onLoaded)
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "Audios/" + audioName);
+        string path = Path.Combine(Application.streamingAssetsPath, audioPath);
 
         UnityWebRequest req = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG);
 

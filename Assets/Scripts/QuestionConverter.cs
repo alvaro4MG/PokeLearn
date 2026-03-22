@@ -174,14 +174,10 @@ public static class QuestionConverter
     {
     #if UNITY_WEBGL
         //Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
-        string path = "Images/" + units[unitId].name + "/" + imageName.Replace(".png", "");
-        Debug.Log("Loading sprite from: " + path);
-        
-        //Sprite img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
-        Sprite img = Resources.Load<Sprite>(path);
+        Sprite img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
         return img;
     #else
-        string path = Path.Combine(Application.streamingAssetsPath, "Images/" + imageName);
+        string path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
 
         if (!File.Exists(path))
         {
@@ -207,10 +203,10 @@ public static class QuestionConverter
     public static void LoadAudio(string audioName, System.Action<AudioClip> onLoaded)
     {
     #if UNITY_WEBGL
-        AudioClip clip = Resources.Load<AudioClip>("Audios/" + audioName.Replace(".mp3", ""));
+        AudioClip clip = Resources.Load<AudioClip>("Audios/" + units[unitId].name + "/" + audioName.Replace(".mp3", ""));
         onLoaded?.Invoke(clip);
     #else
-        QuestionManager.Instance.ConvertAudioClip(audioName, onLoaded);
+        QuestionManager.Instance.ConvertAudioClip("Audios/" + units[unitId].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
     #endif
     }
     
