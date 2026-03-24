@@ -427,8 +427,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1433823970}
   - {fileID: 1834283190}
+  - {fileID: 1433823970}
   m_Father: {fileID: 1648265494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1368,6 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _winTextBox: {fileID: 1118604530}
+  _generalStatsTextBox: {fileID: 1433823971}
 --- !u!1 &1721156864
 GameObject:
   m_ObjectHideFlags: 0

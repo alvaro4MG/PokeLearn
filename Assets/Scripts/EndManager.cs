@@ -10,6 +10,7 @@ public class EndManager : MonoBehaviour
     //private Animator _animator;
     
     [SerializeField] private TMP_Text _winTextBox;
+    [SerializeField] private TMP_Text _generalStatsTextBox;
 
     
     private void Awake()
@@ -44,6 +45,8 @@ public class EndManager : MonoBehaviour
             _winTextBox.text = "You Loose :( ";     // Emojis como 😔 no funcionan
             AudioManager.Instance.PlayLoseMusic();
         }
+        
+        ShowStats();
     }
     
 
@@ -64,7 +67,14 @@ public class EndManager : MonoBehaviour
         {
             //AudioManager.Instance.StopLoseMusic();
         }
+
+        GameSettings.Instance.Stats = 0;
         SceneManager.LoadScene("StartMenu");
+    }
+
+    private void ShowStats()
+    {
+        _generalStatsTextBox.text = "Correct answers: " + GameSettings.Instance.Stats + "/" + "X";
     }
     
     

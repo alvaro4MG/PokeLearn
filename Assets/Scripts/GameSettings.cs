@@ -11,6 +11,14 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private Pokemon _pokemonSelected;
     [SerializeField] private bool win = false;
 
+    private int stats = 0;
+
+    public int Stats
+    {
+        get => stats;
+        set => stats = value;
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

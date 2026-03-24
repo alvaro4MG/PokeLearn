@@ -203,6 +203,7 @@ public class QuestionManager : MonoBehaviour
             {
                 AudioManager.Instance.PlayHitEnemy();
             }
+            GameSettings.Instance.Stats++;
         }
         else
         {
