@@ -68,13 +68,13 @@ public class EndManager : MonoBehaviour
             //AudioManager.Instance.StopLoseMusic();
         }
 
-        GameSettings.Instance.Stats = 0;
+        GameStatistics.Instance.RestartStats();
         SceneManager.LoadScene("StartMenu");
     }
 
     private void ShowStats()
     {
-        _generalStatsTextBox.text = "Correct answers: " + GameSettings.Instance.Stats + "/" + "X";
+        _generalStatsTextBox.text = "Correct answers: " + GameStatistics.Instance.GeneralStats + "/" + GameStatistics.Instance.GeneralStatsTotal;
     }
     
     

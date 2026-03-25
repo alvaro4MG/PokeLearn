@@ -4845,6 +4845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759449951}
   - component: {fileID: 1759449952}
+  - component: {fileID: 1759449953}
   m_Layer: 0
   m_Name: GameSettings
   m_TagString: Untagged
@@ -4883,6 +4884,18 @@ MonoBehaviour:
   _pokemonId: 0
   _pokemonSelected: {fileID: 0}
   win: 0
+--- !u!114 &1759449953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759449950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03141865c15db34bb891e52233867b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1782845301
 GameObject:
   m_ObjectHideFlags: 0

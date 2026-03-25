@@ -89,7 +89,8 @@ public class QuestionManager : MonoBehaviour
         
         // Check grammar on file on QuestionConverter then read here
         
-
+        
+        
         //return list;
         return QuestionConverter.questions;
     }
@@ -203,7 +204,7 @@ public class QuestionManager : MonoBehaviour
             {
                 AudioManager.Instance.PlayHitEnemy();
             }
-            GameSettings.Instance.Stats++;
+            GameStatistics.Instance.GeneralStats++;
         }
         else
         {
@@ -221,6 +222,7 @@ public class QuestionManager : MonoBehaviour
         else
         {
             id = 0;
+            GameStatistics.Instance.GeneralStatsTotal = _questionsList.Count;
             GameSettings.Instance.SetWin(CombatManager.Instance.IsWin());
             SceneManager.LoadScene("EndScene");
         }
