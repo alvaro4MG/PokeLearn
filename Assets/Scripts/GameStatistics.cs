@@ -4,37 +4,25 @@ public class GameStatistics : MonoBehaviour
 {
     public static GameStatistics Instance;
 
-    private int generalStats = 0;
-    private int generalStatsTotal = 0;
+    private int generalStats;
+    private int generalStatsTotal;
     
-    private int listeningStats = 0;
-    private int listeningStatsTotal = 0;
-    private int truefalseStats = 0;
-    private int truefalseStatsTotal = 0;
-    private int multipleChoiceStats = 0;
-    private int multipleChoiceStatsTotal = 0;
+    private int listeningStats;
+    private int listeningStatsTotal;
+    private int trueFalseStats;
+    private int trueFalseStatsTotal;
+    private int multipleChoiceStats;
+    private int multipleChoiceStatsTotal;
 
-    /*public int GeneralStats
-    {
-        get => generalStats;
-        set => generalStats = value;
-    }
     
-    public int GeneralStatsTotal
-    {
-        get => generalStatsTotal;
-        set => generalStatsTotal = value;
-    }*/
-    
-    public int GeneralStats { get;  set; }
-    public int GeneralStatsTotal { get;  set; }
-    public int ListeningStats { get;  set; }
-    public int ListeningStatsTotal { get;  set; }
-    public int TruefalseStats { get;  set; }
-    public int TruefalseStatsTotal { get;  set; }
-    public int MultipleChoiceStats { get;  set; }
-    public int MultipleChoiceStatsTotal { get;  set; }
-    
+    public int GeneralStats { get => generalStats; set => generalStats = value; }
+    public int GeneralStatsTotal { get => generalStatsTotal;  set => generalStatsTotal = value; }
+    public int ListeningStats { get => listeningStats; set => listeningStats = value; }
+    public int ListeningStatsTotal { get => listeningStatsTotal; set => listeningStatsTotal = value; }
+    public int TrueFalseStats { get => trueFalseStats; set => trueFalseStats = value; }
+    public int TrueFalseStatsTotal { get => trueFalseStatsTotal; set => trueFalseStatsTotal = value; }
+    public int MultipleChoiceStats { get => multipleChoiceStats; set => multipleChoiceStats = value; }
+    public int MultipleChoiceStatsTotal { get => multipleChoiceStatsTotal ; set => multipleChoiceStatsTotal = value; }
     
 
     private void Awake()
@@ -57,8 +45,8 @@ public class GameStatistics : MonoBehaviour
         
         listeningStats = 0;
         listeningStatsTotal = 0;
-        truefalseStats = 0;
-        truefalseStatsTotal = 0;
+        trueFalseStats = 0;
+        trueFalseStatsTotal = 0;
         multipleChoiceStats = 0;
         multipleChoiceStatsTotal = 0;
     }

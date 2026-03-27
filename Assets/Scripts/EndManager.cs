@@ -11,6 +11,9 @@ public class EndManager : MonoBehaviour
     
     [SerializeField] private TMP_Text _winTextBox;
     [SerializeField] private TMP_Text _generalStatsTextBox;
+    [SerializeField] private TMP_Text _listeningStatsTextBox;
+    [SerializeField] private TMP_Text _TFStatsTextBox;
+    [SerializeField] private TMP_Text _MultipleChoiceStatsTextBox;
 
     
     private void Awake()
@@ -68,13 +71,15 @@ public class EndManager : MonoBehaviour
             //AudioManager.Instance.StopLoseMusic();
         }
 
-        GameStatistics.Instance.RestartStats();
         SceneManager.LoadScene("StartMenu");
     }
 
     private void ShowStats()
     {
         _generalStatsTextBox.text = "Correct answers: " + GameStatistics.Instance.GeneralStats + "/" + GameStatistics.Instance.GeneralStatsTotal;
+        _listeningStatsTextBox.text = "Listening correct answers: " + GameStatistics.Instance.ListeningStats + "/" + GameStatistics.Instance.ListeningStatsTotal;
+        _TFStatsTextBox.text = "T/F correct answers: " + GameStatistics.Instance.TrueFalseStats + "/" + GameStatistics.Instance.TrueFalseStatsTotal;
+        _MultipleChoiceStatsTextBox.text = "Multiple choice correct answers: " + GameStatistics.Instance.MultipleChoiceStats + "/" + GameStatistics.Instance.MultipleChoiceStatsTotal;
     }
     
     

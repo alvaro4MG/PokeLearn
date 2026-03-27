@@ -55,6 +55,8 @@ public class QuestionManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameStatistics.Instance.RestartStats();
+        
         //Read .txt or json
         _questionsList = LoadQuestions();
         CombatManager.Instance.SetUpMaxHealth(_questionsList.Count);
@@ -204,13 +206,42 @@ public class QuestionManager : MonoBehaviour
             {
                 AudioManager.Instance.PlayHitEnemy();
             }
+            
             GameStatistics.Instance.GeneralStats++;
+            if (questionAudio.clip != null)
+            {
+                GameStatistics.Instance.ListeningStats++;
+                GameStatistics.Instance.ListeningStatsTotal++;
+            } 
+            else if (_questionsList[id].wrongAnswers.Count == 1)
+            {
+                GameStatistics.Instance.TrueFalseStats++;
+                GameStatistics.Instance.TrueFalseStatsTotal++;
+            }
+            else
+            {
+                GameStatistics.Instance.MultipleChoiceStats++;
+                GameStatistics.Instance.MultipleChoiceStatsTotal++;
+            }
         }
         else
         {
             if (!CombatManager.Instance.DamageAlly(1))
             {
                 AudioManager.Instance.PlayHitAlly();
+            }
+            
+            if (questionAudio.clip != null)
+            {
+                GameStatistics.Instance.ListeningStatsTotal++;
+            }
+            else if (_questionsList[id].wrongAnswers.Count == 1)
+            {
+                GameStatistics.Instance.TrueFalseStatsTotal++;
+            }
+            else
+            {
+                GameStatistics.Instance.MultipleChoiceStatsTotal++;
             }
         }
         
