@@ -1,0 +1,44 @@
+#1. This is _________
+%tshirt.png
+@a T-shirt
+-a hat
+-a belt
+-a jacket
+
+#2. This is a skirt
+%skirt.png
+@True
+-False
+
+#3. He is wearing _____
+%jacket.png
+@a patterned jacket
+-a spotty jacket
+-a patterned T-shirt
+-plain boots
+
+#4. What are you wearing? I am wearing ______
+&spotty.mp3
+@spotty boots
+-colourful boots
+-spotty trousers
+-a plain belt
+
+#5. He isn’t wearing a skirt
+%he.png
+@False
+-True
+
+#6. What is she wearing? She _________
+&hat.mp3
+@is wearing a spotty hat
+-isn’t wearing a colourful belt
+-is wearing a plain hat
+-isn’t wearing a spotty belt
+
+#7. I _________
+%trousers.png
+@am wearing stripped trousers
+-are wearing stripped trousers
+-is wearing stripped boots
+-am wearing a spotty jacket
