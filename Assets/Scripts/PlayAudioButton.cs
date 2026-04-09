@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,11 @@ public class PlayAudioButton : MonoBehaviour
 
     [SerializeField] private AudioSource questionAudio;
     [SerializeField] private Image buttonImage;
+
+    private void OnEnable()
+    {
+        buttonImage.sprite = _buttonOff;
+    }
 
     public void SetAudio(AudioClip audioClip)
     {
