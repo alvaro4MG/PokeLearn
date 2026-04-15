@@ -4927,6 +4927,7 @@ MonoBehaviour:
   _pokemonId: 0
   _pokemonSelected: {fileID: 0}
   win: 0
+  _delay: 0.3
 --- !u!1 &1782845301
 GameObject:
   m_ObjectHideFlags: 0

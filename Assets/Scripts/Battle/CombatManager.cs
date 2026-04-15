@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +21,9 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private HealthBarUI _allyHPBar;
     [SerializeField] private TMP_Text _enemyHPTextBox;
     [SerializeField] private HealthBarUI _enemyHPBar;
+    
+    [Header("Delay")]
+    [SerializeField] private float _delay;
     
     private void Awake()
     {
@@ -82,6 +87,28 @@ public class CombatManager : MonoBehaviour
     public bool IsWin()
     {
         return _allyHP >= _enemyHP;
+    }
+
+    public void delayButtons(List<Button> buttons)
+    {
+        StartCoroutine(Delay(buttons));
+    }
+
+    private IEnumerator Delay(List<Button> buttons)
+    {
+        // deactivate buttons
+        foreach (var button in buttons)
+        {
+            button.interactable = false;
+        }
+        
+        yield return new WaitForSeconds(GameSettings.Instance.Delay);
+        
+        // reactivate buttons
+        foreach (var button in buttons)
+        {
+            button.interactable = true;
+        }
     }
 
 }

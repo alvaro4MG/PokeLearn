@@ -10,7 +10,15 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private int _pokemonId;
     [SerializeField] private Pokemon _pokemonSelected;
     [SerializeField] private bool win = false;
+    
+    [Header("Delay")]
+    [SerializeField] private float _delay;
 
+    public float Delay
+    {
+        get => _delay;
+        set => _delay = value;
+    }
 
     private void Awake()
     {

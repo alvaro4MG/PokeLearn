@@ -4097,6 +4097,14 @@ MonoBehaviour:
   _volumeFXDisplay: {fileID: 543384873}
   _playAudioButton: {fileID: 1828953517}
   _loadingTime: 0.1
+  _answerButtons4:
+  - {fileID: 1120309314}
+  - {fileID: 1704032510}
+  - {fileID: 436224805}
+  - {fileID: 1242114680}
+  _answerButtons2:
+  - {fileID: 1628146351}
+  - {fileID: 1909064970}
 --- !u!4 &1324918353
 Transform:
   m_ObjectHideFlags: 0
@@ -4803,6 +4811,7 @@ MonoBehaviour:
   _allyHPBar: {fileID: 367697481}
   _enemyHPTextBox: {fileID: 532066283}
   _enemyHPBar: {fileID: 1534258968}
+  _delay: 0.3
 --- !u!4 &1598572831
 Transform:
   m_ObjectHideFlags: 0

@@ -39,8 +39,10 @@ public class QuestionManager : MonoBehaviour
     
     [Header("Loading screen")]
     [SerializeField] private float _loadingTime = 0.5f;
-    
-    //private AudioSource questionAudio;
+
+    [Header("Answer Buttons")]
+    [SerializeField] private List<Button> _answerButtons4;
+    [SerializeField] private List<Button> _answerButtons2;
     
     
     
@@ -164,17 +166,20 @@ public class QuestionManager : MonoBehaviour
             group2Answer.SetActive(true);
             group4Answer.SetActive(false);
             ShowAnswers(answerTextBox2);
+            CombatManager.Instance.delayButtons(_answerButtons2);
         }
         else
         {
             group4Answer.SetActive(true);
             group2Answer.SetActive(false);
             ShowAnswers(answerTextBox4);
+            CombatManager.Instance.delayButtons(_answerButtons4);
         }
         
 
         
-        // Audio (más arriba)
+        // Delay de botones (más arriba)
+        //CombatManager.Instance.delayButtons();
     }
 
     public void ShowAnswers(List<TMP_Text> answers)
