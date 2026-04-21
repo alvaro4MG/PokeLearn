@@ -17,6 +17,9 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private GameObject _pokemonPicker;
     [SerializeField] private GameObject _nextButton;
     [SerializeField] private List<Pokemon> _pokemons;
+
+    [Header("Fade In")]
+    [SerializeField] private FadeIO _fadeIn;
     
     private int idInstruction;
     
@@ -46,7 +49,7 @@ public class InstructionManager : MonoBehaviour
         idInstruction++;
         if (idInstruction >= _instructions.Count)
         {
-            SceneManager.LoadScene("CombatScene");
+            StartCoroutine(FadeIn());
             return;
         }
         _background.sprite = _instructions[idInstruction];
@@ -62,6 +65,15 @@ public class InstructionManager : MonoBehaviour
         GameSettings.Instance.SetPokemonId(idPokemon);
         GameSettings.Instance.SetPokemonSelected(_pokemons[idPokemon]);
         Debug.Log("ID del pokemon: " + idPokemon);
+        
+        //SceneManager.LoadScene("CombatScene");
+        StartCoroutine(FadeIn());
+    }
+
+    private IEnumerator FadeIn()
+    {
+        _fadeIn.FadeIn();
+        yield return new WaitForSeconds(_fadeIn.Duration);
         SceneManager.LoadScene("CombatScene");
     }
 
