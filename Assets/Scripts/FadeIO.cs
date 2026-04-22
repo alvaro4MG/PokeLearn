@@ -21,6 +21,12 @@ public class FadeIO : MonoBehaviour
         StartFade(1f, 0f);
     }
 
+    public void SetActive(bool active, float fillAmount)
+    {
+        image.gameObject.SetActive(active);
+        image.fillAmount = fillAmount;
+    }
+
     private void StartFade(float start, float end)
     {
         if (currentFade != null)

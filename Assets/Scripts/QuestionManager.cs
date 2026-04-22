@@ -44,6 +44,10 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<Button> _answerButtons4;
     [SerializeField] private List<Button> _answerButtons2;
     
+    [Header("Delay")]
+    [SerializeField] private float _delay;
+    [SerializeField] private FadeIO _fadeOut;
+    
     
     
     private void Awake()
@@ -57,15 +61,18 @@ public class QuestionManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _fadeOut.SetActive(true, 1f);
         GameStatistics.Instance.RestartStats();
         
         //Read .txt or json
         _questionsList = LoadQuestions();
         CombatManager.Instance.SetUpMaxHealth(_questionsList.Count);
-        StartCoroutine(WaitForLoadedQuestions());
+        //StartCoroutine(WaitForLoadedQuestions());
+        _fadeOut.FadeOut();
+        //_fadeOut.SetActive(false, 0f);
         
         //Debug.Log("sigue");
-        //ShowQuestion();
+        ShowQuestion();
         SetVolumesTextBox(-1);
     }
 

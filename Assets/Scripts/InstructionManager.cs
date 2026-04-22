@@ -41,6 +41,7 @@ public class InstructionManager : MonoBehaviour
         _background.sprite = _instructions[idInstruction];
         _nextButton.SetActive(true);
         _pokemonPicker.SetActive(false);
+        _fadeIn.SetActive(false, 1f);
     }
     
     
@@ -64,7 +65,7 @@ public class InstructionManager : MonoBehaviour
     {
         GameSettings.Instance.SetPokemonId(idPokemon);
         GameSettings.Instance.SetPokemonSelected(_pokemons[idPokemon]);
-        Debug.Log("ID del pokemon: " + idPokemon);
+        //Debug.Log("ID del pokemon: " + idPokemon);
         
         //SceneManager.LoadScene("CombatScene");
         StartCoroutine(FadeIn());
@@ -72,6 +73,7 @@ public class InstructionManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        _fadeIn.SetActive(true, 0f);
         _fadeIn.FadeIn();
         yield return new WaitForSeconds(_fadeIn.Duration);
         SceneManager.LoadScene("CombatScene");

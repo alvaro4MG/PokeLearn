@@ -22,8 +22,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private TMP_Text _enemyHPTextBox;
     [SerializeField] private HealthBarUI _enemyHPBar;
     
-    [Header("Delay")]
-    [SerializeField] private float _delay;
+    
     
     private void Awake()
     {
@@ -39,7 +38,7 @@ public class CombatManager : MonoBehaviour
         //AudioManager.Instance.StopBackgroundMusic();
         AudioManager.Instance.PlayCynthiaMusic();
         _allySprite.sprite = GameSettings.Instance.GetPokemonSprite();
-        
+        //_fadeOut.SetActive(true);
     }
 
     public void SetUpMaxHealth(int value)
