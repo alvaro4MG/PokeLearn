@@ -78,6 +78,8 @@ public static class QuestionConverter
         //string text = GetQuestionFileText();
         
         string[] lines = GetQuestionFileText().Split('\n');
+        
+        // read badge and leader
 
         Question currentQuestion = null;
 
