@@ -90,7 +90,17 @@ public static class QuestionConverter
             if (string.IsNullOrEmpty(line))
                 continue;
 
-            if (line.StartsWith("#"))       // Question text
+            if (line.StartsWith("="))   // Gym badge
+            {
+                string imageName = line.Substring(1).Trim();
+                GameSettings.Instance.CurrentBadge = LoadImage(0, imageName);
+            }
+            else if (line.StartsWith("/"))  // Gym leader
+            {
+                string imageName = line.Substring(1).Trim();
+                GameSettings.Instance.CurrentLeader = LoadImage(1, imageName);
+            }
+            else if (line.StartsWith("#"))       // Question text
             {
                 currentQuestion = new Question();
                 currentQuestion.questionText = line.Substring(1).Trim();
@@ -103,7 +113,7 @@ public static class QuestionConverter
                 Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
                 currentQuestion.image = img;*/
                 string imageName = line.Substring(1).Trim();
-                currentQuestion.image = LoadImage(imageName);
+                currentQuestion.image = LoadImage(2, imageName);
             }
             else if (line.StartsWith("&") && currentQuestion != null)
             {
@@ -134,8 +144,6 @@ public static class QuestionConverter
                 currentQuestion.wrongAnswers.Add(line.Substring(1).Trim());
             }
         }
-
-        //Debug.Log($"Preguntas cargadas: {questions.Count}");
         
     }
 
@@ -172,14 +180,40 @@ public static class QuestionConverter
         return units.Count;
     }
 
-    private static Sprite LoadImage(string imageName)
+    private static Sprite LoadImage(int operation, string imageName)
     {
     #if UNITY_WEBGL
         //Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
-        Sprite img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
+        Sprite img = null;
+        switch (operation)
+        {
+            case 0:
+                img = Resources.Load<Sprite>("Badges/" + imageName.Replace(".png", ""));
+                break;
+            case 1:
+                img = Resources.Load<Sprite>("Leaders/" + imageName.Replace(".png", ""));
+                break;
+            case 2:
+                img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
+                break;
+        }
         return img;
     #else
-        string path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
+        //string path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
+        string path = null; 
+
+        switch (operation)
+        {
+            case 0:
+                path = Path.Combine(Application.streamingAssetsPath, "Badges/" + imageName);
+                break;
+            case 1:
+                path = Path.Combine(Application.streamingAssetsPath, "Leaders/" + imageName);
+                break;
+            case 2:
+                path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
+                break;
+        }
 
         if (!File.Exists(path))
         {

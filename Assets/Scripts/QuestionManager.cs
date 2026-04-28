@@ -96,7 +96,8 @@ public class QuestionManager : MonoBehaviour
 
         //QuestionConverter
         
-        QuestionConverter.LoadQuestions();
+        //QuestionConverter.LoadQuestions();
+        return QuestionConverter.GetQuestions();
         
         // Check grammar on file on QuestionConverter then read here
         

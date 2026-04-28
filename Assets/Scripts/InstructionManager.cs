@@ -18,6 +18,10 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private GameObject _nextButton;
     [SerializeField] private List<Pokemon> _pokemons;
 
+    [Header("Unit Sprites")]
+    [SerializeField] private Image _badgeSprite;
+    [SerializeField] private Image _leaderSprite;
+
     [Header("Fade In")]
     [SerializeField] private FadeIO _fadeIn;
     
@@ -37,7 +41,12 @@ public class InstructionManager : MonoBehaviour
     void Start()
     {
         idInstruction = 0;
-        //_animator.Play("toggle");
+        QuestionConverter.LoadQuestions();
+        _badgeSprite.gameObject.SetActive(true);
+        _badgeSprite.sprite = GameSettings.Instance.CurrentBadge;
+        _leaderSprite.gameObject.SetActive(true);
+        _leaderSprite.sprite = GameSettings.Instance.CurrentLeader;
+        
         _background.sprite = _instructions[idInstruction];
         _nextButton.SetActive(true);
         _pokemonPicker.SetActive(false);
@@ -54,6 +63,11 @@ public class InstructionManager : MonoBehaviour
             return;
         }
         _background.sprite = _instructions[idInstruction];
+        if (idInstruction == 1)
+        {
+            _badgeSprite.gameObject.SetActive(false);
+            _leaderSprite.gameObject.SetActive(false);
+        }
         if (idInstruction == _instructions.Count - 1)
         {
             _nextButton.SetActive(false);

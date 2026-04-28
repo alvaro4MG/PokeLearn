@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class GameSettings : MonoBehaviour
     
     [Header("Delay")]
     [SerializeField] private float _delay;
+
+    private Sprite _currentBadge;
+    private Sprite _currentLeader;
+    
+    public Sprite CurrentBadge { get { return _currentBadge; } set { _currentBadge = value; } }
+    public Sprite CurrentLeader { get { return _currentLeader; } set { _currentLeader = value; } }
 
     public float Delay
     {
