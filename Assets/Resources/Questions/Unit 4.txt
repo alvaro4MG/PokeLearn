@@ -1,3 +1,5 @@
+=medal1.png
+/cynthia.png
 #1. She is my _________ 
 %grandma.png
 @grandma
