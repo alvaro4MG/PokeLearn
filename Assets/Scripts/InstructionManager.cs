@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.UI;
 
 public class InstructionManager : MonoBehaviour
@@ -24,6 +26,10 @@ public class InstructionManager : MonoBehaviour
 
     [Header("Fade In")]
     [SerializeField] private FadeIO _fadeIn;
+
+    [Header("Dialogue")]
+    [SerializeField] private GameObject _dialogueGO;
+    [SerializeField] private TMP_Text _dialogueText;
     
     private int idInstruction;
     
@@ -51,6 +57,9 @@ public class InstructionManager : MonoBehaviour
         _nextButton.SetActive(true);
         _pokemonPicker.SetActive(false);
         _fadeIn.SetActive(false, 1f);
+        
+        _dialogueGO.SetActive(true);
+        _dialogueText.text = LoadDialogue();
     }
     
     
@@ -65,8 +74,9 @@ public class InstructionManager : MonoBehaviour
         _background.sprite = _instructions[idInstruction];
         if (idInstruction == 1)
         {
-            _badgeSprite.gameObject.SetActive(false);
-            _leaderSprite.gameObject.SetActive(false);
+            //_badgeSprite.gameObject.SetActive(false);
+            //_leaderSprite.gameObject.SetActive(false);
+            _dialogueGO.SetActive(false);
         }
         if (idInstruction == _instructions.Count - 1)
         {
@@ -91,6 +101,13 @@ public class InstructionManager : MonoBehaviour
         _fadeIn.FadeIn();
         yield return new WaitForSeconds(_fadeIn.Duration);
         SceneManager.LoadScene("CombatScene");
+    }
+
+    private String LoadDialogue()
+    {
+        return
+            "Hello I'm <color=red>Cynthia</color>, the <color=red>Pokemon gym leader</color>\nI will ask you <color=blue>6 questions</color> about the unit.\n \n-TAP the correct answer\n" +
+            "-At the end, <color=green>YOU WIN</color> or <color=yellow>YOU LOOSE</color> will appear\nWhen <color=green>YOU WIN</color>, you get this badge";
     }
 
 }

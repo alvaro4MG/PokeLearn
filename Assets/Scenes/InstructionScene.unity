@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -281,12 +281,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 945392951}
+  m_Father: {fileID: 1648265494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 690.95, y: -93.2499}
-  m_SizeDelta: {x: -1381.9, y: -186.4999}
+  m_AnchoredPosition: {x: 723.47107, y: -138.12941}
+  m_SizeDelta: {x: -1446.9421, y: -276.25882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165974222
 MonoBehaviour:
@@ -542,14 +542,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46
+  m_fontSize: 72
   m_fontSizeBase: 46
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 32
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 20.099243, y: 20.09932, z: 15.632996, w: 13.399536}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -940,10 +940,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 945392951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305, y: -286.45}
-  m_SizeDelta: {x: 394.7903, y: 399.2567}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.45}
+  m_AnchoredPosition: {x: -265, y: 0}
+  m_SizeDelta: {x: -1373.3782, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759899248
 MonoBehaviour:
@@ -1307,7 +1307,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1643636809}
-  - {fileID: 165974221}
   - {fileID: 759899247}
   m_Father: {fileID: 1648265494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1466,10 +1465,10 @@ RectTransform:
   - {fileID: 192812257}
   m_Father: {fileID: 945392951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 690.9468, y: -255.02565}
-  m_SizeDelta: {x: 1381.8912, y: 510.0515}
+  m_AnchorMin: {x: 0, y: 0.45}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -221.05322, y: 16.47435}
+  m_SizeDelta: {x: -442.10876, y: -32.948486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643636810
 MonoBehaviour:
@@ -1606,6 +1605,7 @@ RectTransform:
   - {fileID: 1299032502}
   - {fileID: 1122960239}
   - {fileID: 644663413}
+  - {fileID: 165974221}
   - {fileID: 116113693}
   - {fileID: 945392951}
   m_Father: {fileID: 0}
@@ -1809,6 +1809,8 @@ MonoBehaviour:
   _badgeSprite: {fileID: 759899248}
   _leaderSprite: {fileID: 165974222}
   _fadeIn: {fileID: 644663414}
+  _dialogueGO: {fileID: 945392950}
+  _dialogueText: {fileID: 192812258}
 --- !u!1 &1759449950
 GameObject:
   m_ObjectHideFlags: 0
