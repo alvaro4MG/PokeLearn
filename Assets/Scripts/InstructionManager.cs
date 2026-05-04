@@ -80,6 +80,7 @@ public class InstructionManager : MonoBehaviour
         }
         if (idInstruction == _instructions.Count - 1)
         {
+            _leaderSprite.gameObject.SetActive(false);
             _nextButton.SetActive(false);
             _pokemonPicker.SetActive(true);
         }

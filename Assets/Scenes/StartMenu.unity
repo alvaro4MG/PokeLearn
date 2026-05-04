@@ -6428,7 +6428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8f3bedcf9dd384386e430f7ff6eaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeMusic: 5
+  _volumeMusic: 0
   _volumeFX: 5
   _muted: 0
   _mixer: {fileID: 24100000, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
