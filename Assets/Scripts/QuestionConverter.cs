@@ -99,6 +99,7 @@ public static class QuestionConverter
             {
                 string imageName = line.Substring(1).Trim();
                 GameSettings.Instance.CurrentLeader = LoadImage(1, imageName);
+                GameSettings.Instance.CurrentLeaderName = imageName.Replace(".png", "");
             }
             else if (line.StartsWith("#"))       // Question text
             {
@@ -144,7 +145,9 @@ public static class QuestionConverter
                 currentQuestion.wrongAnswers.Add(line.Substring(1).Trim());
             }
         }
-        
+
+        GameSettings.Instance.QuestionsNumber = questions.Count;
+
     }
 
     public static List<Question> GetQuestions()

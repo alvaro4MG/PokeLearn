@@ -28,8 +28,10 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private FadeIO _fadeIn;
 
     [Header("Dialogue")]
-    [SerializeField] private GameObject _dialogueGO;
-    [SerializeField] private TMP_Text _dialogueText;
+    [SerializeField] private GameObject _dialogue1GO;
+    [SerializeField] private TMP_Text _dialogue1Text;
+    [SerializeField] private GameObject _dialogue2GO;
+    [SerializeField] private GameObject _dialogue3GO;
     
     private int idInstruction;
     
@@ -58,32 +60,37 @@ public class InstructionManager : MonoBehaviour
         _pokemonPicker.SetActive(false);
         _fadeIn.SetActive(false, 1f);
         
-        _dialogueGO.SetActive(true);
-        _dialogueText.text = LoadDialogue();
+        _dialogue1GO.SetActive(true);
+        _dialogue1Text.text = LoadDialogue();
     }
     
     
     public void NextInstruction()
     {
         idInstruction++;
-        if (idInstruction >= _instructions.Count)
+
+        switch (idInstruction)
         {
-            StartCoroutine(FadeIn());
-            return;
+            case 1:     // Instructions/RULES
+                _dialogue1GO.SetActive(false);
+                _dialogue2GO.SetActive(true);
+                break;
+            case 2:     // Choose your team
+                _dialogue2GO.SetActive(false);
+                _dialogue3GO.SetActive(true);
+                break;
+            case 3:     // Pokemon Picker
+                _dialogue3GO.SetActive(false);
+                _leaderSprite.gameObject.SetActive(false);
+                _nextButton.SetActive(false);
+                _pokemonPicker.SetActive(true);
+                break;
+            case 4:     // No more instructions
+                StartCoroutine(FadeIn());
+                return;
         }
         _background.sprite = _instructions[idInstruction];
-        if (idInstruction == 1)
-        {
-            //_badgeSprite.gameObject.SetActive(false);
-            //_leaderSprite.gameObject.SetActive(false);
-            _dialogueGO.SetActive(false);
-        }
-        if (idInstruction == _instructions.Count - 1)
-        {
-            _leaderSprite.gameObject.SetActive(false);
-            _nextButton.SetActive(false);
-            _pokemonPicker.SetActive(true);
-        }
+        
     }
 
     public void PickPokemon(int idPokemon)
@@ -107,7 +114,8 @@ public class InstructionManager : MonoBehaviour
     private String LoadDialogue()
     {
         return
-            "Hello I'm <color=red>Cynthia</color>, the <color=red>Pokemon gym leader</color>\nI will ask you <color=blue>6 questions</color> about the unit.\n \n-TAP the correct answer\n" +
+            "Hello I'm <color=red>" + GameSettings.Instance.CurrentLeaderName + "</color>, the <color=red>Pokemon gym leader</color>\n" +
+            "I will ask you <color=blue>" + GameSettings.Instance.QuestionsNumber + " questions</color> about the unit.\n \n-TAP the correct answer\n" +
             "-At the end, <color=green>YOU WIN</color> or <color=yellow>YOU LOOSE</color> will appear\nWhen <color=green>YOU WIN</color>, you get this badge";
     }
 

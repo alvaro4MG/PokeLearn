@@ -1,5 +1,5 @@
 =medal1.png
-/cynthia.png
+/Cynthia.png
 #1. I like _______ 
 %beef.png
 @beef
@@ -21,10 +21,10 @@
 
 #4. What's your favourite food? _________  
 &food.mp3
-@My favourite food is pasta
+@My favourite food is fish
+-My favourite food is pasta
 -I like fish
 -My favourite is candy
--My favourite food is fish
 
 #5. I don't like sweet popcorn 
 %popcorn.png

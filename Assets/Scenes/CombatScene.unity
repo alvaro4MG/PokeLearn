@@ -5896,7 +5896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1766754193}
-  duration: 0.5
+  duration: 0.3
 --- !u!114 &1766754193
 MonoBehaviour:
   m_ObjectHideFlags: 0
