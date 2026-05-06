@@ -1,24 +1,46 @@
-#A ______ T-shirt
-%shirt.png
-@striped
--blue
--patterned
--spotty
+=medal1.png
+/Cynthia.png
+#1. This is _________
+%sharpener.png
+@a sharpener
+-a correction tape
+-a book
+-a pencilcase
 
-#She _____ a spotty skirt
-%skirt.png
-@is wearing
--am wearing
--wears
--is wear
+#2. This isn't a correction tape
+%true.png
+@True
+-False
 
-#He is wearing a colorful hat
-%hat.png
+#3. The notebook is _____ the table
+%above.png
+@above
+-on
+-next to
+-under
+
+#4. The book is ____ the table
+&book.mp3
+@on
+-under
+-above
+-below
+
+#5. The sharpener is on the rubber
+%false.png
 @False
 -True
 
-#What ____ wearing?
-@are you
--you are
--is you
--you is
+#6. The pencil is _________
+&pen.mp3
+@next to the pen
+-above the table
+-on the table
+-next to the notebook
+
+#7. The pencil is _________
+%last.png
+@in the pencilcase
+-on the pencilcase
+-in the book
+-on the table

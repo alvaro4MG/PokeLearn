@@ -1,0 +1,46 @@
+=medal1.png
+/Cynthia.png
+#1. I like _______ 
+%beef.png
+@beef
+-pork
+-fish
+-corn
+
+#2. This is a pepper 
+%rice.png
+@False
+-True
+
+#3. He likes ________ 
+%pasta.png
+@spicy pasta
+-spicy corn
+-sour pasta
+-salty rice
+
+#4. What's your favourite food? _________  
+&food.mp3
+@My favourite food is fish
+-My favourite food is pasta
+-I like fish
+-My favourite is candy
+
+#5. I don't like sweet popcorn 
+%popcorn.png
+@True
+-False
+
+#6. Listen and complete: She __________
+&pork.mp3
+@doesn't like bland, sour pork
+-doesn't like pork
+-don't like spicy pork
+-likes bland pork
+
+#7. He ___________
+%corn.png
+@likes salty, tasty corn
+-doesn't like salty, tasty corn
+-like salty corn
+-likes sweet corn

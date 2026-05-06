@@ -245,7 +245,8 @@ public static class QuestionConverter
         AudioClip clip = Resources.Load<AudioClip>("Audios/" + units[unitId].name + "/" + audioName.Replace(".mp3", ""));
         onLoaded?.Invoke(clip);
     #else
-        QuestionManager.Instance.ConvertAudioClip("Audios/" + units[unitId].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
+        //QuestionManager.Instance.ConvertAudioClip("Audios/" + units[unitId].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
+        InstructionManager.Instance.ConvertAudioClip("Audios/" + units[unitId].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
     #endif
     }
     

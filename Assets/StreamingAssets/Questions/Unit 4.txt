@@ -1,0 +1,46 @@
+=medal1.png
+/Cynthia.png
+#1. She is my _________ 
+%grandma.png
+@grandma
+-grandpa
+-mother
+-aunt
+
+#2. He is my father 
+%grandpa.png
+@False
+-True
+
+#3. His brother is ______
+%brave.png
+@brave
+-calm
+-serious
+-shy
+
+#4. Listen and complete: Her _____  
+&cousin.mp3
+@cousin is serious
+-cousin is calm
+-cousin is brave
+-aunt is shy
+
+#5. My step-father is calm 
+%calm.png
+@True
+-Flase
+
+#6. Listen and complete: _______ is shy
+&uncle.mp3
+@Our uncle
+-Our sister
+-My father
+-Her step-mother
+
+#7. My ______ is ______
+%mother.png
+@mother is sensitive
+-aunt is serious
+-cousin is brave
+-sister is shy

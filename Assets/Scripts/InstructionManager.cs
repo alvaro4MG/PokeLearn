@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class InstructionManager : MonoBehaviour
@@ -117,6 +119,30 @@ public class InstructionManager : MonoBehaviour
             "Hello I'm <color=red>" + GameSettings.Instance.CurrentLeaderName + "</color>, the <color=red>Pokemon gym leader</color>\n" +
             "I will ask you <color=blue>" + GameSettings.Instance.QuestionsNumber + " questions</color> about the unit.\n \n-TAP the correct answer\n" +
             "-At the end, <color=green>YOU WIN</color> or <color=yellow>YOU LOOSE</color> will appear\nWhen <color=green>YOU WIN</color>, you get this badge";
+    }
+    
+    public void ConvertAudioClip(string audioName, System.Action<AudioClip> onLoaded)
+    {
+        StartCoroutine(LoadAudioCoroutine(audioName, onLoaded));
+    }
+
+    private IEnumerator LoadAudioCoroutine(string audioPath, System.Action<AudioClip> onLoaded)
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, audioPath);
+
+        UnityWebRequest req = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG);
+
+        yield return req.SendWebRequest();
+
+        if (req.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Audio load error: " + req.error);
+            onLoaded?.Invoke(null);
+            yield break;
+        }
+
+        AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
+        onLoaded?.Invoke(clip);
     }
 
 }

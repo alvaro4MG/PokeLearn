@@ -1,13 +1,46 @@
-#UNIT2 A ______ T-shirt
-%shirt.png
-@striped
--blue
--patterned
--spotty
+=medal1.png
+/Cynthia.png
+#1. I have got _______
+%four.png
+@four arms
+-four legs
+-two arms
+-four eyes
 
-#A _____ scarf
-%scarf.png
-@blue
--red
--yellow
--green
+#2. She has got five eyes
+%five.png
+@False
+-True
+
+#3. He has got ________
+%long.png
+@long legs
+-short legs
+-big eyebrows
+-long arms
+
+#4. Listen and complete: He____________
+&ears.mp3
+@hasn’t got big ears
+-has got big eyes
+-hasn’t got big eyes
+-has got big ears
+
+#5. I have got big eyebrows and small ears
+%big.png
+@True
+-False
+
+#6. Listen and complete: I _________
+&nose.mp3
+@have got a big nose
+-has got a big nose
+-hasn’t got a big nose
+-haven’t got a big nose
+
+#7. She _________
+%hair.png
+@has got long hair
+-has got short hair
+-have got long hair
+-has got a big belly
