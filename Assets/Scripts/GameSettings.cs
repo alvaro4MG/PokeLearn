@@ -18,11 +18,13 @@ public class GameSettings : MonoBehaviour
     private Sprite _currentBadge;
     private Sprite _currentLeader;
     private string _currentLeaderName;
+    private Sprite _currentPokemonEnemy;
     private int _questionsNumber;
     
     public Sprite CurrentBadge { get { return _currentBadge; } set { _currentBadge = value; } }
     public Sprite CurrentLeader { get { return _currentLeader; } set { _currentLeader = value; } }
     public string CurrentLeaderName { get { return _currentLeaderName; } set { _currentLeaderName = value; } }
+    public Sprite CurrentPokemonEnemy { get { return _currentPokemonEnemy; } set { _currentPokemonEnemy = value; } }
     public int QuestionsNumber { get { return _questionsNumber; } set { _questionsNumber = value; } }
 
     public float Delay

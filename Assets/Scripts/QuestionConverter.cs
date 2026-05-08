@@ -101,6 +101,11 @@ public static class QuestionConverter
                 GameSettings.Instance.CurrentLeader = LoadImage(1, imageName);
                 GameSettings.Instance.CurrentLeaderName = imageName.Replace(".png", "");
             }
+            else if (line.StartsWith("$"))  // Leader Pokemon
+            {
+                string imageName = line.Substring(1).Trim();
+                GameSettings.Instance.CurrentPokemonEnemy = LoadImage(3, imageName);
+            }
             else if (line.StartsWith("#"))       // Question text
             {
                 currentQuestion = new Question();
@@ -188,7 +193,7 @@ public static class QuestionConverter
     #if UNITY_WEBGL
         //Sprite img = Resources.Load<Sprite>("Images/" + imageName.Replace(".png", ""));
         Sprite img = null;
-        switch (operation)
+        switch (operation)      // Podria quitar este switch y mandar el path desde donde se invoca
         {
             case 0:
                 img = Resources.Load<Sprite>("Badges/" + imageName.Replace(".png", ""));
@@ -198,6 +203,9 @@ public static class QuestionConverter
                 break;
             case 2:
                 img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
+                break;
+            case 3:
+                img = Resources.Load<Sprite>("LeaderPokemon/" + imageName.Replace(".png", ""));
                 break;
         }
         return img;
@@ -215,6 +223,9 @@ public static class QuestionConverter
                 break;
             case 2:
                 path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
+                break;
+            case 3:
+                path = Path.Combine(Application.streamingAssetsPath, "LeaderPokemon/" + imageName);
                 break;
         }
 

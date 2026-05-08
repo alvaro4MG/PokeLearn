@@ -1,5 +1,6 @@
 =medal1.png
 /Cynthia.png
+$garchomp_front.png
 #X. AUDIO, 2 answers
 &test_audio.mp3
 @correct
