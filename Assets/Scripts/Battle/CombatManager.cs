@@ -83,7 +83,7 @@ public class CombatManager : MonoBehaviour
 
     private void UpdateHP(TMP_Text textBox, int hp)
     {
-        textBox.text = "HP: " + hp.ToString() + "/" + _maxHP.ToString();
+        textBox.text = hp.ToString() + "/" + _maxHP.ToString();
     }
 
     public bool IsWin()

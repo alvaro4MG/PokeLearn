@@ -3,8 +3,6 @@ using UnityEngine;
 public class HealthBarUI : MonoBehaviour
 {
     [Header("Parameters")]
-    //[SerializeField] private float _health;
-    [SerializeField] private float _maxHealth;
     [SerializeField] private float _width;
     [SerializeField] private float _height;
     
@@ -12,12 +10,12 @@ public class HealthBarUI : MonoBehaviour
     [SerializeField] private RectTransform _healthBar;
     [SerializeField] private RectTransform _parent;
 
+    private float _maxHealth;
+    
     private void Start()
     {
         _height = _parent.sizeDelta.y;
         _width = _parent.sizeDelta.x;
-        //_maxHealth = CombatManager._maxHP;
-        //_maxHealth = QuestionManager.Instance.GetNumbersOfQuestions();
     }
 
     public void SetMaxHealth(float maxHealth)
@@ -31,9 +29,7 @@ public class HealthBarUI : MonoBehaviour
         value = Mathf.Clamp(value, 0, _maxHealth);
         float newWidth = (value / _maxHealth) * _width;
         
-        //_healthBar.sizeDelta = new Vector2(_width, _height);
         _healthBar.sizeDelta = new Vector2(newWidth, _height);
-        
     }
     
 }
