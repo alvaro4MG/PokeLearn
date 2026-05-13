@@ -24,15 +24,7 @@ public class EndManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    /*private void Awake(){
-        //_animator = GetComponent<Animator>();
-        //_backgroundMusic = GetComponent<AudioSource>();
-        //_controls = new InputActions();
-        
-        
-    }*/
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         //_animator.Play("toggle");
