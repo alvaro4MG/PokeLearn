@@ -192,6 +192,24 @@ public class QuestionManager : MonoBehaviour
 
     public void ShowAnswers(List<TMP_Text> answers)
     {
+
+        if (_questionsList[id].wrongAnswers.Count == 1)   // for T/F, False is left (red button) and True is right
+        {
+            if (String.Equals(_questionsList[id].correctAnswer, "False"))
+            {
+                answers[0].text = _questionsList[id].correctAnswer;
+                correctAnswerButton = 0;
+                answers[1].text = _questionsList[id].wrongAnswers[0];
+            }
+            else
+            {
+                answers[0].text = _questionsList[id].wrongAnswers[0];
+                answers[1].text = _questionsList[id].correctAnswer;
+                correctAnswerButton = 1;
+            }
+            return;
+        }
+        
         List<int> numbers = new List<int>();
         for (int i = 0; i <= _questionsList[id].wrongAnswers.Count; i++) {  // for loop until <= for additional correct one
             numbers.Add(i);
