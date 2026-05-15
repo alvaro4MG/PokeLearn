@@ -1,5 +1,5 @@
 =medal1.png
-/Cynthia.png
+/Gardenia.png
 #1. I like _______ 
 %beef.png
 @beef

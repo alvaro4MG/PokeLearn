@@ -1,5 +1,5 @@
 =medal1.png
-/Cynthia.png
+/Roco.png
 #1. She is my _________ 
 %grandma.png
 @grandma

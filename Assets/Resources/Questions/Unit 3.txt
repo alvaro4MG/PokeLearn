@@ -1,5 +1,5 @@
 =medal1.png
-/Cynthia.png
+/Fantina.png
 #1. This is _________
 %tshirt.png
 @a T-shirt
