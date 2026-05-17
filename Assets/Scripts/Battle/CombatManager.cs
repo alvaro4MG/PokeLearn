@@ -41,7 +41,7 @@ public class CombatManager : MonoBehaviour
         AudioManager.Instance.PlayCynthiaMusic();
         _allySprite.sprite = GameSettings.Instance.GetPokemonSprite();
         _leaderSprite.sprite = GameSettings.Instance.CurrentLeader;
-        //_pokemonEnemySprite.sprite = GameSettings.Instance.GetPokemonSprite();
+        _pokemonEnemySprite.sprite = GameSettings.Instance.CurrentPokemonEnemy;
     }
 
     public void SetUpMaxHealth(int value)
