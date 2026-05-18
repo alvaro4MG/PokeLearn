@@ -1,4 +1,4 @@
-=medal1.png
+=Medalla Inverna.png
 /Inverna.png
 $Abomasnow Inverna.png
 #1. This is _________

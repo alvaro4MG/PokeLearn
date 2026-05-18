@@ -1,5 +1,6 @@
-=medal1.png
-/Cynthia.png
+=Medalla Inverna.png
+/Inverna.png
+$Abomasnow Inverna.png
 #1. This is _________
 %sharpener.png
 @a sharpener

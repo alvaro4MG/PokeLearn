@@ -1,5 +1,6 @@
-=medal1.png
-/Cynthia.png
+=Medalla Gardenia.png
+/Gardenia.png
+$Roserade Gardenia.png
 #1. I like _______ 
 %beef.png
 @beef

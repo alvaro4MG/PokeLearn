@@ -1,5 +1,6 @@
-=medal1.png
-/Cynthia.png
+=Medalla Fantina.png
+/Fantina.png
+$Mismagius Fantina.png
 #1. This is _________
 %tshirt.png
 @a T-shirt

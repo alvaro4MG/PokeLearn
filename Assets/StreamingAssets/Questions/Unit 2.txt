@@ -1,5 +1,6 @@
-=medal1.png
-/Cynthia.png
+=Medalla Mananti.png
+/Mananti.png
+$Gyarados Mananti.png
 #1. I have got _______
 %four.png
 @four arms
