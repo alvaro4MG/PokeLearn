@@ -6432,6 +6432,7 @@ MonoBehaviour:
   _volumeFX: 5
   _muted: 0
   _mixer: {fileID: 24100000, guid: baec2e1adefb3f94bb437f8325f66573, type: 2}
+  _volumeDecrease: 3
   _backgroundMusic: {fileID: 2138379766}
   _cynthiaMusic: {fileID: 2138379770}
   _winMusic: {fileID: 2138379771}

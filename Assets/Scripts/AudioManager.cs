@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private int _volumeFX = 5;
     [SerializeField] private bool _muted;
     [SerializeField] private AudioMixer _mixer;
+    [SerializeField] private int _volumeDecrease;
     
     [Header("Background Music")]
     [SerializeField] private AudioSource _backgroundMusic;
@@ -26,7 +27,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _hitAlly;
 
     private AudioSource _currentMusic;
-    
+
+    public int VolumeDecrease { get => _volumeDecrease; set => _volumeDecrease = value; }
+
     //private const string MUSIC_VOLUME_KEY = "MusicVolume";
     
     private void Awake()
@@ -139,6 +142,12 @@ public class AudioManager : MonoBehaviour
         _volumeMusic += value;
         _mixer.SetFloat("MusicVolume", CalculateVolume(_volumeMusic));
         return _volumeMusic;
+    }
+    
+    public void SetVolumeMusic(int value)
+    {
+        _volumeMusic = value;
+        _mixer.SetFloat("MusicVolume", CalculateVolume(_volumeMusic));
     }
     
     public int VolumeFX(int value)

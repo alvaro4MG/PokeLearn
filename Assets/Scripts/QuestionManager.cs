@@ -330,7 +330,6 @@ public class QuestionManager : MonoBehaviour
 
     public void PlayAudio()
     {
-        //questionAudio.Play();
         _playAudioButton.PlayAudio();
     }
 

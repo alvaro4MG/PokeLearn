@@ -4480,6 +4480,7 @@ MonoBehaviour:
   _volumeMusicDisplay: {fileID: 597176330}
   _volumeFXDisplay: {fileID: 543384873}
   _playAudioButton: {fileID: 1828953517}
+  _volumeDecrease: 0
   _loadingTime: 0.1
   _answerButtons4:
   - {fileID: 1120309314}
