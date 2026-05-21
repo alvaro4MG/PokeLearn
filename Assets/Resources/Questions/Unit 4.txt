@@ -30,7 +30,7 @@ $Golem Roco.png
 #5. My step-father is calm 
 %calm.png
 @True
--Flase
+-False
 
 #6. Listen and complete: _______ is shy
 &uncle.mp3
