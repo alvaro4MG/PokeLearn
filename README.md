@@ -10,9 +10,19 @@ Check out its current state on itch.io [here](https://alvaro4mg.itch.io/pokelear
 
 
 ## Local Version
-The local version allows you to enter your own questions manually with a simple txt file.
+The local version allows you to enter your own questions manually with a simple txt file. These txt files can be found and used in the folder of the build PokeLearn_Data/StreamingAssets/Questions. In order to use images and audios for the questions, these must be in the folders Images and Audios, using only the formats .png and .mp3 (more formats coming soon) and in a folder with the same name as the txt filename.
 
-The format is as follows:
+The first lines of the txt file will be as follows:
+> =image of the medal (png image in the Badges folder)
+> 
+> /image of the leader (png image in the Leaders folder)
+> 
+> $image of the leader's pokemon (png image in the LeaderPokemon folder)
+
+
+
+
+The format of the questions is as follows:
 > #Text of question
 > 
 > %image (optional) // &audio (optional) [ONLY 1 OF THESE]
@@ -27,7 +37,13 @@ The format is as follows:
 
 ### Examples of txt files
 
-> Example 1:
+> Example 1 (including leader information):
+
+=Medalla Inverna.png
+
+/Inverna.png
+
+$Abomasnow Inverna.png
 
 #1. 1 image, 4 answers
 
