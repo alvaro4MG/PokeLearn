@@ -1,0 +1,47 @@
+=Medalla Leon.png
+/León.png
+$Infernape Leon.png
+#1. What time is it? It is _________ 
+%o_clock.png
+@seven o'clock
+-half past 7
+-quarter to 7
+-quarter past 7
+
+#2. It is half past five 
+%half.png
+@False
+-True
+
+#3. What is the weather like? It is ______
+%snowy.png
+@snowy
+-windy
+-sunny
+-foggy
+
+#4. What's the weather like?: It is _____  
+&cloudy.mp3
+@cloudy
+-rainy
+-stormy
+-windy
+
+#5. At 3 o'clock, it will be sunny 
+%sunny.png
+@True
+-Flase
+
+#6. Listen and complete: At _______ it will be stormy
+&past.mp3
+@half past 10
+-9 o'clock
+-6 o'clock
+-half past 2
+
+#7. At ______ it will be ______
+%rainy.png
+@quarter to 12 it will be rainy
+-quarter to 6 it will be rainy
+-quarter to 12 it will be sunny
+-half to 4 it will be foggy
