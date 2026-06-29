@@ -1,0 +1,47 @@
+=Medalla Acerón.png
+/Acerón.png
+$Steelix Acerón.png
+#1. What do you do? I _________ 
+%TV.png
+@watch TV
+-sleep
+-eat
+-study
+
+#2. I brush my teeth 
+%shower.png
+@False
+-True
+
+#3. I ______
+%sleep.png
+@sleep after I eat
+-sleep before I eat
+-study after I eat
+-have a shower before I read
+
+#4. Listen and complete: I have a shower_________  
+&study.mp3
+@after I study
+-before I study
+-after I eat
+-after I sleep
+
+#5. I study at the bedroom 
+%bedroom.png
+@True
+-False
+
+#6. Listen and complete: I _________
+&garage.mp3
+@don't brush my teeth at the garage
+-sleep at the garage
+-don't eat at the kitchen
+-brush my teeth at the living room
+
+#7. What do you do? I_____ at the _______
+%living.png
+@watch TV at the living room
+-watch TV at the kitchen
+-eat at the living room
+-sleep at the garage
