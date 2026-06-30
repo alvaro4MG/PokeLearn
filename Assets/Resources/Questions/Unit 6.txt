@@ -1,5 +1,5 @@
 =Medalla Leon.png
-/León.png
+/Leon.png
 $Infernape Leon.png
 #1. What time is it? It is _________ 
 %o_clock.png

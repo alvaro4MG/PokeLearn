@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38c10e79ae78ec14e9143688967189ad
+guid: 81bc1cf830290354cb7bb76f8c002d44
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4351172467154567309
-    second: "Acer\xF3n_0"
+      213: 8431077267506978619
+    second: Leon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Acer\xF3n_0"
+      name: Leon_0
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 334
-        height: 672
+        x: 80
+        y: 19
+        width: 1781
+        height: 3862
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37fbac2d1b78d93c0800000000000000
-      internalID: -4351172467154567309
+      spriteID: b3fdf93ea14310570800000000000000
+      internalID: 8431077267506978619
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Acer\xF3n_0": -4351172467154567309
+      Leon_0: 8431077267506978619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
