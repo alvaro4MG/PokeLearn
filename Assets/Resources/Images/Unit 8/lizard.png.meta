@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a03940f89c62cd34faa57f1f6579e944
+guid: aff9ce6ff7d0c2a44920d36e13539a08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3188469062162123721
-    second: garchomp_front_0
+      213: -6383312658857005041
+    second: lizard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: garchomp_front_0
+      name: lizard_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 73
-        height: 80
+        width: 988
+        height: 988
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 734f08cf74840c3d0800000000000000
-      internalID: -3188469062162123721
+      spriteID: f00f29ef4fae967a0800000000000000
+      internalID: -6383312658857005041
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      garchomp_front_0: -3188469062162123721
+      lizard_0: -6383312658857005041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

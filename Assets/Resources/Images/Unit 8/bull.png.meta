@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d05a3e0e0d9caf146a890a4dfc228722
+guid: b1db83b798d47a946b3e225ed4fd1095
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9130429235513691357
-    second: cynthia_0
+      213: -6276390541757865910
+    second: bull_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cynthia_0
+      name: bull_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1
-        width: 617
-        height: 1187
+        x: 0
+        y: 0
+        width: 968
+        height: 970
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddc82adb30dc5be70800000000000000
-      internalID: 9130429235513691357
+      spriteID: a40a6e65e08c5e8a0800000000000000
+      internalID: -6276390541757865910
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cynthia_0: 9130429235513691357
+      bull_0: -6276390541757865910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

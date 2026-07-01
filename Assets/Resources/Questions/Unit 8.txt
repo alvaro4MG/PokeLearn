@@ -1,0 +1,47 @@
+=Medalla Cintia.png
+/Cintia.png
+$Garchomp Cintia.png
+#1.There is a ________ 
+%fox.png
+@fox
+-deer
+-wolf
+-goat
+
+#2. There is a lizard
+%bull.png
+@False
+-True
+
+#3. There are ______ 
+%owls.png
+@a lot of owls 
+-some owls
+-a lot of horses
+-many deers
+
+#4. Listen and complete: My _________  
+&favourite.mp3
+@favourite animal is the horse
+-animal favourite is horse
+-favourite animal is the lizard
+-animal is a wolf
+
+#5. There is a scaly lizard 
+%lizard.png
+@True
+-False
+
+#6. Listen and complete: There are  _________ 
+&goat.mp3
+@many fluffy goats
+-a lot of feathery goats
+-many fluffy deers
+-a goat
+
+#7. There are _____ and  _______  
+%wolves.png
+@a lot of fluffy wolves and a feathery owl
+-some fluffy wolves and a feathery lizard
+-a lot of feathery owls and a fluffy wolf
+-a wolf and a goat
