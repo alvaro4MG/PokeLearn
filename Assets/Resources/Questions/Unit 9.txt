@@ -1,0 +1,47 @@
+=Medalla Lectro.png
+/Lectro.png
+$Raichu Lectro.png
+#1. This is a _________ 
+%cinema.png
+@cinema
+-park
+-museum
+-hospital
+
+#2. This is a hospital 
+%supermarket.png
+@False
+-True
+
+#3. The library is ______ the restaurant 
+%alao.png
+@next to
+-behind
+-in front of
+-between
+
+#4. Listen and complete: The park is _______ the hospital  
+&park.mp3
+@behind
+-next to
+-above
+-in front of
+
+#5. To go to the police station you have to turn right 
+%turnright.png
+@True
+-False
+
+#6. Listen and complete: To get to the bridge you have to _________  
+&turnleft.mp3
+@turn left
+-go to the left
+-go straight ahead
+-turn right
+
+#7. To get to the museum you have to ______ and ________ 
+%ruta.png
+@turn right and go straight ahead
+-turn left and turn right
+-turn left and go straight ahead
+-go straight ahead
