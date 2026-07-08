@@ -14,10 +14,28 @@ public static class QuestionConverter
     [Header("Result")] 
     public static List<MyTextAsset> units = GetUnits();
     public static List<Question> questions = new List<Question>();
-    
+
+
+    public static Dictionary<int, int> realIndex;
 
     public static List<MyTextAsset> GetUnits()
     {
+        // Dictionary for indexes
+        realIndex = new Dictionary<int, int>();
+        realIndex.Add(0, 0);
+        realIndex.Add(1, 5);
+        realIndex.Add(2, 6);
+        realIndex.Add(3, 7);
+        realIndex.Add(4, 8);
+        realIndex.Add(5, 9);
+        realIndex.Add(6, 10);
+        realIndex.Add(7, 11);
+        realIndex.Add(8, 12);
+        realIndex.Add(9, 1);
+        realIndex.Add(10, 2);
+        realIndex.Add(11, 3);
+        realIndex.Add(12, 4);
+        
         List<MyTextAsset> newList = new List<MyTextAsset>();
         
     #if UNITY_WEBGL
@@ -48,7 +66,7 @@ public static class QuestionConverter
     {
     #if UNITY_WEBGL
         // Leer desde Resources (WebGL / HTML)
-        TextAsset textAsset = Resources.Load<TextAsset>("Questions/" + units[unitId].name);
+        TextAsset textAsset = Resources.Load<TextAsset>("Questions/" + units[realIndex[unitId]].name);
 
         if (textAsset == null)
         {
@@ -60,7 +78,7 @@ public static class QuestionConverter
 
     #else
         // Leer desde StreamingAssets (Windows build)
-        string path = Path.Combine(Application.streamingAssetsPath, "Questions/" + units[unitId].name + ".txt");
+        string path = Path.Combine(Application.streamingAssetsPath, "Questions/" + units[realIndex[unitId]].name + ".txt");
 
         if (!File.Exists(path))
         {
@@ -180,7 +198,7 @@ public static class QuestionConverter
         {
             unitId = units.Count - 1;
         }
-        return units[unitId].name;
+        return units[realIndex[unitId]].name;
     }
 
     public static int GetUnitsNumber()
@@ -202,7 +220,7 @@ public static class QuestionConverter
                 img = Resources.Load<Sprite>("Leaders/" + imageName.Replace(".png", ""));
                 break;
             case 2:
-                img = Resources.Load<Sprite>("Images/" + units[unitId].name + "/" + imageName.Replace(".png", ""));
+                img = Resources.Load<Sprite>("Images/" + units[realIndex[unitId]].name + "/" + imageName.Replace(".png", ""));
                 break;
             case 3:
                 img = Resources.Load<Sprite>("LeaderPokemon/" + imageName.Replace(".png", ""));
@@ -210,7 +228,7 @@ public static class QuestionConverter
         }
         return img;
     #else
-        //string path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
+        //string path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[realIndex[unitId]].name + "/" + imageName);
         string path = null; 
 
         switch (operation)
@@ -222,7 +240,7 @@ public static class QuestionConverter
                 path = Path.Combine(Application.streamingAssetsPath, "Leaders/" + imageName);
                 break;
             case 2:
-                path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[unitId].name + "/" + imageName);
+                path = Path.Combine(Application.streamingAssetsPath, "Images/" + units[realIndex[unitId]].name + "/" + imageName);
                 break;
             case 3:
                 path = Path.Combine(Application.streamingAssetsPath, "LeaderPokemon/" + imageName);
@@ -253,11 +271,11 @@ public static class QuestionConverter
     public static void LoadAudio(string audioName, System.Action<AudioClip> onLoaded)
     {
     #if UNITY_WEBGL
-        AudioClip clip = Resources.Load<AudioClip>("Audios/" + units[unitId].name + "/" + audioName.Replace(".mp3", ""));
+        AudioClip clip = Resources.Load<AudioClip>("Audios/" + units[realIndex[unitId]].name + "/" + audioName.Replace(".mp3", ""));
         onLoaded?.Invoke(clip);
     #else
-        //QuestionManager.Instance.ConvertAudioClip("Audios/" + units[unitId].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
-        InstructionManager.Instance.ConvertAudioClip("Audios/" + units[unitId].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
+        //QuestionManager.Instance.ConvertAudioClip("Audios/" + units[realIndex[unitId]].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
+        InstructionManager.Instance.ConvertAudioClip("Audios/" + units[realIndex[unitId]].name + "/" + audioName, onLoaded);  // This loading needs a MonoBehaviour
     #endif
     }
     
