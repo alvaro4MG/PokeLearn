@@ -1,0 +1,47 @@
+=Medalla Quinoa.png
+/Quinoa.png
+$Lucario Quinoa.png
+#1. I travel by _________ 
+%train.png
+@train
+-car
+-bus
+-plane
+
+#2. Do you travel by plane? Yes I do 
+%planen_t.png
+@False
+-True
+
+#3. How do you go to the park? 
+%goto.png
+@To go to the park I travel by bicycle
+-To go to the supermarket I travel by plane
+-Going to the park is by bicycle
+-To go to the park I travel by walking
+
+#4. Listen and complete: A car is _______ than a scooter  
+&car.mp3
+@bigger
+-smaller
+-faster 
+-heavier
+
+#5. A train is faster than a motorbike 
+%faster.png
+@True
+-False
+
+#6. Listen and complete: To go to school I go _________ 
+&scooter.mp3
+@by scooter. It is faster than walking
+-by train. It is slower than walking
+-by scooter
+-by car
+
+#7. A ____ is_____ than a _______ 
+%comparar.png
+@plane is heavier than a car
+-plane is faster than a car
+-plane is smaller than a car
+-motorbike is faster than a car
