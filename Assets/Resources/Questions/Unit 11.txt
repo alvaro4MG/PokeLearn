@@ -1,0 +1,47 @@
+=Medalla Maya.png
+/Maya.png
+$Empoleon Maya.png
+#1. Where are you from? I am from _________ 
+%france.png
+@France
+-Spain
+-Germany
+-Italy
+
+#2. I am from Italy 
+%portugal.png
+@False
+-True
+
+#3. I am from Spain. Where ________?
+%from.png
+@are you from?
+-you from?
+-do you live?
+-are you?
+
+#4. Listen and complete: I like _____ food because it is _______  
+&spanishfood.mp3
+@Spanish. It is tasty
+-Spanish. It is salty
+-Japanese. It is spicy
+-British. It is bland
+
+#5. She is German 
+%german.png
+@True
+-False
+
+#6. Listen and complete: He is from ______. He is _______  
+&british.mp3
+@Great Britain. He is British
+-Great Britain. He is American.
+-Spain. He is British.
+-Great Britain. He is Great British
+
+#7. Where is she from? They are from _______. They are ______ 
+%japanese.png
+@Japan. They are Japanese
+-Japan. They are Chinese
+-Japan. They are Korean
+-China. They are Chinese
