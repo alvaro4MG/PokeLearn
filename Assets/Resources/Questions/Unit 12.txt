@@ -1,0 +1,47 @@
+=Medalla Brega.png
+/Brega.png
+$Machamp Brega.png
+#1. I can _________ 
+%instrument.png
+@play an instrument
+-read
+-play videogames
+-dance
+
+#2. I can paint 
+%dance.png
+@False
+-True
+
+#3. I ______ 
+%singn_t.png
+@can’t sing
+-can’t play an instrument
+-can sing
+-can dance
+
+#4. Listen and complete: I _________ 
+&videogames.mp3
+@can play videogames
+-can play an instrument
+-can’t read
+-can write
+
+#5. I read every day 
+%read.png
+@True
+-False
+
+#6. Listen and complete: I can paint. I _______
+&paint.mp3
+@usually paint
+-never paint
+-paint every day
+-hardly ever paint
+
+#7. I______. I _______ 
+%write.png
+@can’t write. I never write
+-can’t write
+-can write. I always write
+-can’t read. I usually read
