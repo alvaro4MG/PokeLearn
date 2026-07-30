@@ -1,0 +1,47 @@
+=Medalla Malta.png
+/Malta.png
+$Venusaur Malta.png
+#1. This is _________ 
+%deforestation.png
+@deforestation
+-trash
+-global warming
+-pollution
+
+#2. This is pollution
+%global.png
+@False
+-True
+
+#3. You ________  
+%water.png
+@should save water
+-shouldn’t reduce
+-should waste water
+-should plant a tree
+
+#4. Listen and complete: You _________the lights 
+&must.mp3
+@must turn off 
+-mustn’t turn on 
+-should turn off
+-must litter
+
+#5. You must pick up trash 
+%pickup.png
+@True
+-False
+
+#6. Listen and complete: To stop ______, you _______ 
+&defo.mp3
+@deforestation, you must plant a tree
+-pollution, you must reuse
+-global warming, you should plant a tree
+-deforestation, you should litter
+
+#7. To stop_______, you _________ 
+%litter.png
+@pollution, you shouldn’t litter
+-global warming, you shouldn’t litter
+-pollution, you should litter
+-pollution, you should save water
